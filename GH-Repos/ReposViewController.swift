@@ -20,6 +20,15 @@ class ReposViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGreen
+        DataFetcherService().fetchRepos { result in
+            switch result {
+                
+            case .success(let repos):
+                print(repos[12].owner?.avatar_url)
+            case .failure(_):
+                break
+            }
+        }
     }
     
     
