@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//MARK: - RepoModel
 struct RepoModel: Decodable {
     var full_name : String?
     var description: String?
@@ -16,4 +16,11 @@ struct RepoModel: Decodable {
 
 struct Owner: Decodable {
     var avatar_url : String
+}
+
+
+
+//MARK: - FilteredRepos
+struct FilteredRepos: Decodable {
+    var items: [RepoModel]?
 }

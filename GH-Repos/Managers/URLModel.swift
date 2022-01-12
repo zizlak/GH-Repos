@@ -24,11 +24,12 @@ struct URLModel {
         components.host = host
         
         for path in path {
-            components.path.append(path)
+            let pathWithSlash = "/" + path
+            components.path.append(pathWithSlash)
         }
         
         components.queryItems = queryItems
-        
+        print(components)
         return components.url
     }
 }

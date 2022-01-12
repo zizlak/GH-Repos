@@ -17,7 +17,7 @@ protocol DataFetcherProtocol {
     var networkService: NetworkServiceProtocol
     
     //MARK: - Init
-    init(networkService: NetworkService = NetworkService()) {
+    init(networkService: NetworkServiceProtocol = NetworkService()) {
         self.networkService = networkService
     }
     

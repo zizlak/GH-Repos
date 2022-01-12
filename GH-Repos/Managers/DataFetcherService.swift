@@ -14,7 +14,7 @@ class DataFetcherService {
     
     
     //MARK: - Init
-    init(networkDataFetcher: NetworkDataFetcher = NetworkDataFetcher()) {
+    init(networkDataFetcher: DataFetcherProtocol = NetworkDataFetcher()) {
         self.networkDataFetcher = networkDataFetcher
     }
     
@@ -22,7 +22,20 @@ class DataFetcherService {
     func fetchRepos(completion: @escaping(Result<[RepoModel], ReposError>) -> Void) {
         let urlModel = URLModel(scheme: "https",
                                 host: "api.github.com",
-                                path: ["/repositories"])
+                                path: ["repositories"])
+        guard let url = urlModel.url else { return }
+        
+        networkDataFetcher.fetchGenericJSONData(url: url, completion: completion)
+    }
+    
+    
+    //MARK: - Repos by keyword
+    func fetchReposBy(keyword: String, completion: @escaping(Result<FilteredRepos, ReposError>) -> Void) {
+        let urlModel = URLModel(scheme: "https",
+                                host: "api.github.com",
+                                path: ["search", "repositories"],
+                                queryItems: [URLQueryItem(name: "q", value: keyword)]
+        )
         guard let url = urlModel.url else { return }
         
         networkDataFetcher.fetchGenericJSONData(url: url, completion: completion)
