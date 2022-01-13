@@ -56,7 +56,7 @@ class ReposViewController: UIViewController {
     
     private func setupTableView() {
         tableView.backgroundColor = Colors.backGround
-        tableView.pin(to: view)
+        tableView.pin(to: view, with: 5)
         
         tableView.register(RepoCell.self, forCellReuseIdentifier: RepoCell.reuseID)
         tableView.dataSource = self

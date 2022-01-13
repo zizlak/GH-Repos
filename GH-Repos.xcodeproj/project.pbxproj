@@ -64,6 +64,9 @@
 		A07C253327908A7200EDEEEA /* Extensions-UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C253227908A7200EDEEEA /* Extensions-UIViewController.swift */; };
 		A07C253427908A7200EDEEEA /* Extensions-UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C253227908A7200EDEEEA /* Extensions-UIViewController.swift */; };
 		A07C253527908A7200EDEEEA /* Extensions-UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C253227908A7200EDEEEA /* Extensions-UIViewController.swift */; };
+		A07C25372790B45000EDEEEA /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25362790B45000EDEEEA /* ImageFetcher.swift */; };
+		A07C25382790B45000EDEEEA /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25362790B45000EDEEEA /* ImageFetcher.swift */; };
+		A07C25392790B45000EDEEEA /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25362790B45000EDEEEA /* ImageFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,7 @@
 		A07C252A2790144E00EDEEEA /* Extensions-UINavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions-UINavBar.swift"; sourceTree = "<group>"; };
 		A07C252E279026E300EDEEEA /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		A07C253227908A7200EDEEEA /* Extensions-UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions-UIViewController.swift"; sourceTree = "<group>"; };
+		A07C25362790B45000EDEEEA /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 				A03E8AF7278EE5F3008E34C2 /* NetworkService.swift */,
 				A03E8B01278EEA8D008E34C2 /* NetworkDataFetcher.swift */,
 				A03E8B05278EEE2D008E34C2 /* DataFetcherService.swift */,
+				A07C25362790B45000EDEEEA /* ImageFetcher.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				A07C250E278F0A1200EDEEEA /* Colors.swift in Sources */,
 				A03E8B06278EEE2D008E34C2 /* DataFetcherService.swift in Sources */,
 				A03E8ACC278EE450008E34C2 /* ReposViewController.swift in Sources */,
+				A07C25372790B45000EDEEEA /* ImageFetcher.swift in Sources */,
 				A03E8AC8278EE450008E34C2 /* AppDelegate.swift in Sources */,
 				A03E8AFE278EE6E9008E34C2 /* ReposError.swift in Sources */,
 				A03E8B13278EF614008E34C2 /* RepoModel.swift in Sources */,
@@ -419,6 +425,7 @@
 				A07C250F278F0A1B00EDEEEA /* Colors.swift in Sources */,
 				A07C2511278F0A1E00EDEEEA /* Extensions-UIView.swift in Sources */,
 				A03E8B14278EF614008E34C2 /* RepoModel.swift in Sources */,
+				A07C25382790B45000EDEEEA /* ImageFetcher.swift in Sources */,
 				A03E8B0B278EF0A4008E34C2 /* URLModel.swift in Sources */,
 				A03E8B03278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */,
 				A03E8AF9278EE5F3008E34C2 /* NetworkService.swift in Sources */,
@@ -448,6 +455,7 @@
 				A03E8AFA278EE5F3008E34C2 /* NetworkService.swift in Sources */,
 				A07C251C278F0D5700EDEEEA /* RepoCell.swift in Sources */,
 				A03E8B0C278EF0A4008E34C2 /* URLModel.swift in Sources */,
+				A07C25392790B45000EDEEEA /* ImageFetcher.swift in Sources */,
 				A07C2531279026E300EDEEEA /* Box.swift in Sources */,
 				A03E8B00278EE6E9008E34C2 /* ReposError.swift in Sources */,
 				A07C25242790035500EDEEEA /* RepoListViewModel.swift in Sources */,

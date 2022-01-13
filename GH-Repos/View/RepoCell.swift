@@ -103,6 +103,8 @@ class RepoCell: UITableViewCell {
         
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
-        avatarView.image = viewModel.image
+        viewModel.fetchImage() { [weak self] in
+            self?.avatarView.image = $0
+        }
     }
 }

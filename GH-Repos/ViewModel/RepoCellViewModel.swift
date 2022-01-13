@@ -10,7 +10,8 @@ import UIKit
 protocol RepoCellViewModelProtocol: AnyObject {
     var name : String { get }
     var description : String { get }
-    var image : UIImage? { get }
+
+    func fetchImage(completion: @escaping(UIImage?) -> Void)
 }
 
 class RepoCellViewModel: RepoCellViewModelProtocol {
@@ -27,8 +28,16 @@ class RepoCellViewModel: RepoCellViewModelProtocol {
         repoModel.description ?? "No Description"
     }
     
-    var image: UIImage? {
-        return UIImage(systemName: "heart")
+    //MARK: - Methods
+    func fetchImage(completion: @escaping(UIImage?) -> Void) {
+        let imageURL = repoModel.owner?.avatar_url
+        ImageFetcher.shared.fetchImageData(urlString: imageURL) { image in
+            guard let image = image else {
+                completion(Constants.defaultImage)
+                return
+            }
+            completion(image)
+        }
     }
     
     

@@ -10,7 +10,7 @@ import Foundation
 class DataFetcherService {
     
     //MARK: - Dependency
-    var networkDataFetcher: DataFetcherProtocol
+    private var networkDataFetcher: DataFetcherProtocol
     
     
     //MARK: - Init
@@ -40,6 +40,5 @@ class DataFetcherService {
         
         networkDataFetcher.fetchGenericJSONData(url: url, completion: completion)
     }
-    
 }
 
