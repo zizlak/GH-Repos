@@ -1,5 +1,5 @@
 //
-//  Extensions-NavBar.swift
+//  Extensions-UINavBar.swift
 //  GH-Repos
 //
 //  Created by Aleksandr Kurdiukov on 13.01.22.

@@ -29,7 +29,6 @@ struct URLModel {
         }
         
         components.queryItems = queryItems
-        print(components)
         return components.url
     }
 }

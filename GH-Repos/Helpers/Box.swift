@@ -11,13 +11,13 @@ class Box<T> {
     
     typealias Listener = (T) -> Void
     
-    private var value: T {
+    var value: T {
         didSet {
             listener?(value)
         }
     }
     
-    var listener: Listener?
+    private var listener: Listener?
     
     func bind(listener: @escaping Listener) {
         self.listener = listener

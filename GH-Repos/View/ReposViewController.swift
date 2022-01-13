@@ -32,6 +32,10 @@ class ReposViewController: UIViewController {
         repoListViewModel = RepoListViewModel(){ [unowned self] in
             self.tableView.reloadData()
         }
+        repoListViewModel?.errorString.bind(listener: { [unowned self] in
+            guard let error = $0 else { return }
+            self.popUp(message: error)
+        })
         repoListViewModel?.fetchAllRepos()
     }
     

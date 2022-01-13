@@ -18,6 +18,7 @@ class NetworkService: NetworkServiceProtocol {
     func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void) {        
         let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)
+        print("Task Resume")
         task.resume()
     }
     
@@ -30,12 +31,11 @@ class NetworkService: NetworkServiceProtocol {
                     completion(.failure(.unableToComplete))
                     return
                 }
-//                guard let response = response as? HTTPURLResponse,
-//                      response.statusCode == 200 else {
-//                          completion(.failure(.invalidResponse))
-                          print((response as? HTTPURLResponse)?.statusCode)
-//                          return
-//                      }
+                guard let response = response as? HTTPURLResponse,
+                      response.statusCode == 200 else {
+                          completion(.failure(.invalidResponse))
+                          return
+                      }
                 guard let data = data else {
                     completion(.failure(.invalidData))
                     return

@@ -15,7 +15,7 @@ protocol RepoListViewModelProtocol {
     func fetchReposContaining(_ keyword: String) -> Void
     func searchTextDidChange(to keyword: String) -> Void
     
-    var error: Box<String?> {get set}
+    var errorString: Box<String?> {get set}
 }
 
 class RepoListViewModel : RepoListViewModelProtocol {
@@ -23,18 +23,18 @@ class RepoListViewModel : RepoListViewModelProtocol {
     //MARK: - Properties
     typealias Listener = () -> ()
     
-    var listener: Listener?
-    var repos: [RepoModel] = [] {
+    var reposDidChange: Listener?
+    private var repos: [RepoModel] = [] {
         didSet {
-            listener?()
+            reposDidChange?()
         }
     }
-    var error: Box<String?> = Box(nil)
+    var errorString: Box<String?> = Box(nil)
     
     
     //MARK: - Init
     init(listener: Listener?) {
-        self.listener = listener
+        self.reposDidChange = listener
     }
     
     //MARK: - Methods
@@ -45,13 +45,17 @@ class RepoListViewModel : RepoListViewModelProtocol {
                 self?.repos = repos
                 
             case .failure(let error):
-                print(error.rawValue)
+                self?.errorString.value = error.rawValue
             }
         }
     }
     
     func fetchReposContaining(_ keyword: String) {
-        guard !keyword.isEmpty else { fetchAllRepos(); return }
+        guard !keyword.isEmpty else {
+            fetchAllRepos()
+            return
+        }
+        
         DataFetcherService().fetchReposContaining(keyword) { [weak self] result in
             switch result {
             case .success(let repos):
@@ -59,7 +63,7 @@ class RepoListViewModel : RepoListViewModelProtocol {
                 self?.repos = items
                 
             case .failure(let error):
-                print(error.rawValue)
+                self?.errorString = Box(error.rawValue)
             }
         }
     }
