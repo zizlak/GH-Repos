@@ -40,7 +40,7 @@ class ReposViewController: UIViewController {
     }
     
     private func setupViewController() {
-        view.backgroundColor = Colors.second
+        view.backgroundColor = Colors.backGround
         title = "Repositories"
     }
     
@@ -55,7 +55,7 @@ class ReposViewController: UIViewController {
     }
     
     private func setupTableView() {
-        tableView.backgroundColor = Colors.second
+        tableView.backgroundColor = Colors.backGround
         tableView.pin(to: view)
         
         tableView.register(RepoCell.self, forCellReuseIdentifier: RepoCell.reuseID)

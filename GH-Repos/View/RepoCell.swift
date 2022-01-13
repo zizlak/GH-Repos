@@ -48,7 +48,7 @@ class RepoCell: UITableViewCell {
     //MARK: - Methods
     
     private func setupCell() {
-        self.backgroundColor = Colors.second
+        self.backgroundColor = Colors.backGround
     }
     
     private func setupAvatarView() {
@@ -71,7 +71,7 @@ class RepoCell: UITableViewCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         nameLabel.font = UIFont.preferredFont(forTextStyle: .title2)
-        nameLabel.textColor = Colors.first
+        nameLabel.textColor = Colors.tint
         nameLabel.numberOfLines = 0
         
         NSLayoutConstraint.activate([
@@ -87,7 +87,7 @@ class RepoCell: UITableViewCell {
         
         descriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.textColor = Colors.third
+        descriptionLabel.textColor = Colors.text
         
         NSLayoutConstraint.activate([
             descriptionLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: padding),
