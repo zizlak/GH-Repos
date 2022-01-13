@@ -49,6 +49,15 @@
 		A07C251E278F0E8200EDEEEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C251D278F0E8200EDEEEA /* Constants.swift */; };
 		A07C251F278F0E8200EDEEEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C251D278F0E8200EDEEEA /* Constants.swift */; };
 		A07C2520278F0E8200EDEEEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C251D278F0E8200EDEEEA /* Constants.swift */; };
+		A07C25222790035500EDEEEA /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* RepoListViewModel.swift */; };
+		A07C25232790035500EDEEEA /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* RepoListViewModel.swift */; };
+		A07C25242790035500EDEEEA /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* RepoListViewModel.swift */; };
+		A07C25262790036000EDEEEA /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25252790036000EDEEEA /* RepoCellViewModel.swift */; };
+		A07C25272790036000EDEEEA /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25252790036000EDEEEA /* RepoCellViewModel.swift */; };
+		A07C25282790036000EDEEEA /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25252790036000EDEEEA /* RepoCellViewModel.swift */; };
+		A07C252B2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */; };
+		A07C252C2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */; };
+		A07C252D2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +100,9 @@
 		A07C250D278F0A1200EDEEEA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A07C2519278F0D5700EDEEEA /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		A07C251D278F0E8200EDEEEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A07C25212790035500EDEEEA /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		A07C25252790036000EDEEEA /* RepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellViewModel.swift; sourceTree = "<group>"; };
+		A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions-NavBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				A03E8AFD278EE6E9008E34C2 /* ReposError.swift */,
-				A07C250B278F098000EDEEEA /* Extensions-UIView.swift */,
+				A07C25292790142300EDEEEA /* Extensions */,
 				A07C250D278F0A1200EDEEEA /* Colors.swift */,
 				A07C251D278F0E8200EDEEEA /* Constants.swift */,
 			);
@@ -222,8 +234,19 @@
 		A07C2518278F0CC500EDEEEA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A07C25212790035500EDEEEA /* RepoListViewModel.swift */,
+				A07C25252790036000EDEEEA /* RepoCellViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A07C25292790142300EDEEEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A07C250B278F098000EDEEEA /* Extensions-UIView.swift */,
+				A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07C25262790036000EDEEEA /* RepoCellViewModel.swift in Sources */,
 				A03E8B02278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */,
 				A07C250E278F0A1200EDEEEA /* Colors.swift in Sources */,
 				A03E8B06278EEE2D008E34C2 /* DataFetcherService.swift in Sources */,
@@ -364,8 +388,10 @@
 				A03E8AFE278EE6E9008E34C2 /* ReposError.swift in Sources */,
 				A03E8B13278EF614008E34C2 /* RepoModel.swift in Sources */,
 				A07C251E278F0E8200EDEEEA /* Constants.swift in Sources */,
+				A07C252B2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */,
 				A07C250C278F098000EDEEEA /* Extensions-UIView.swift in Sources */,
 				A03E8B0A278EF0A4008E34C2 /* URLModel.swift in Sources */,
+				A07C25222790035500EDEEEA /* RepoListViewModel.swift in Sources */,
 				A03E8AF8278EE5F3008E34C2 /* NetworkService.swift in Sources */,
 				A03E8ACA278EE450008E34C2 /* SceneDelegate.swift in Sources */,
 				A07C251A278F0D5700EDEEEA /* RepoCell.swift in Sources */,
@@ -376,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07C25272790036000EDEEEA /* RepoCellViewModel.swift in Sources */,
 				A03E8B07278EEE2D008E34C2 /* DataFetcherService.swift in Sources */,
 				A07C250F278F0A1B00EDEEEA /* Colors.swift in Sources */,
 				A07C2511278F0A1E00EDEEEA /* Extensions-UIView.swift in Sources */,
@@ -384,8 +411,10 @@
 				A03E8B03278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */,
 				A03E8AF9278EE5F3008E34C2 /* NetworkService.swift in Sources */,
 				A07C251F278F0E8200EDEEEA /* Constants.swift in Sources */,
+				A07C252C2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */,
 				A07C2515278F0A2700EDEEEA /* SceneDelegate.swift in Sources */,
 				A03E8ADF278EE452008E34C2 /* GH_ReposTests.swift in Sources */,
+				A07C25232790035500EDEEEA /* RepoListViewModel.swift in Sources */,
 				A07C2513278F0A2500EDEEEA /* AppDelegate.swift in Sources */,
 				A03E8AFF278EE6E9008E34C2 /* ReposError.swift in Sources */,
 				A07C251B278F0D5700EDEEEA /* RepoCell.swift in Sources */,
@@ -397,13 +426,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07C2514278F0A2500EDEEEA /* AppDelegate.swift in Sources */,
+				A07C252D2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */,
 				A03E8AEB278EE452008E34C2 /* GH_ReposUITestsLaunchTests.swift in Sources */,
 				A07C2510278F0A1B00EDEEEA /* Colors.swift in Sources */,
 				A03E8B15278EF614008E34C2 /* RepoModel.swift in Sources */,
+				A07C25282790036000EDEEEA /* RepoCellViewModel.swift in Sources */,
 				A03E8AFA278EE5F3008E34C2 /* NetworkService.swift in Sources */,
 				A07C251C278F0D5700EDEEEA /* RepoCell.swift in Sources */,
 				A03E8B0C278EF0A4008E34C2 /* URLModel.swift in Sources */,
 				A03E8B00278EE6E9008E34C2 /* ReposError.swift in Sources */,
+				A07C25242790035500EDEEEA /* RepoListViewModel.swift in Sources */,
 				A07C2512278F0A1E00EDEEEA /* Extensions-UIView.swift in Sources */,
 				A03E8AE9278EE452008E34C2 /* GH_ReposUITests.swift in Sources */,
 				A03E8B04278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */,

@@ -18,16 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.rootViewController = UINavigationController(rootViewController: ReposViewController())
 
-        setupAppearance()
+        UINavigationBar.setupUI()
         window?.makeKeyAndVisible()
     }
-    
-    private func setupAppearance() {
-        UINavigationBar.appearance().tintColor = Colors.first
-        UINavigationBar.appearance().prefersLargeTitles = true
-        UINavigationBar.appearance().barTintColor = Colors.second
-    }
-
     
     func sceneDidDisconnect(_ scene: UIScene) {
     }

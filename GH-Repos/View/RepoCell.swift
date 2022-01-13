@@ -23,6 +23,10 @@ class RepoCell: UITableViewCell {
     private let padding = Constants.standartPadding
     private let imageSize = Constants.cellImageWidth
     
+    weak var viewModel: RepoCellViewModelProtocol? {
+        didSet { configureUI() }
+    }
+    
     
     //MARK: - LifeCycle Methods
     
@@ -47,7 +51,6 @@ class RepoCell: UITableViewCell {
         self.backgroundColor = Colors.second
     }
     
-    
     private func setupAvatarView() {
         addSubview(avatarView)
         avatarView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,22 +66,20 @@ class RepoCell: UITableViewCell {
         ])
     }
     
-    
     private func setupNameLabel() {
         addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-
+        
         nameLabel.font = UIFont.preferredFont(forTextStyle: .title2)
         nameLabel.textColor = Colors.first
         nameLabel.numberOfLines = 0
-
+        
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: padding),
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
         ])
     }
-    
     
     private func setupDescriptionLabel() {
         addSubview(descriptionLabel)
@@ -94,5 +95,14 @@ class RepoCell: UITableViewCell {
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -padding)
         ])
+    }
+    
+    //MARK: - configureUI
+    private func configureUI() {
+        guard let viewModel = viewModel else { return }
+        
+        nameLabel.text = viewModel.name
+        descriptionLabel.text = viewModel.description
+        avatarView.image = viewModel.image
     }
 }

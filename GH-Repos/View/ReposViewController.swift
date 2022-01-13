@@ -13,30 +13,27 @@ class ReposViewController: UIViewController {
     private let tableView = UITableView()
     
     //MARK: - Properties
-    
+    var repoListViewModel: RepoListViewModelProtocol?
     
     //MARK: - LifeCycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupRepoListViewModel()
         setupViewController()
         setupSearchController()
         setupTableView()
-        
-        DataFetcherService().fetchReposBy(keyword: "Zoom") { result in
-            switch result {
-                
-            case .success(let repos):
-                print(repos.items![3].owner?.avatar_url)
-            case .failure(let error):
-                print(error.rawValue)
-            }
-        }
     }
     
     
     //MARK: - Methods
+    private func setupRepoListViewModel() {
+        repoListViewModel = RepoListViewModel(){ [unowned self] in
+            self.tableView.reloadData()
+        }
+        repoListViewModel?.fetchStories()
+    }
     
     private func setupViewController() {
         view.backgroundColor = Colors.second
@@ -47,7 +44,9 @@ class ReposViewController: UIViewController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search repositories"
-        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.searchBar.searchTextField.delegate = self
+        
         navigationItem.searchController = searchController
     }
     
@@ -57,6 +56,7 @@ class ReposViewController: UIViewController {
         
         tableView.register(RepoCell.self, forCellReuseIdentifier: RepoCell.reuseID)
         tableView.dataSource = self
+        tableView.allowsSelection = false
     }
 }
 
@@ -77,15 +77,20 @@ extension ReposViewController : UISearchResultsUpdating {
 
 extension ReposViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        22
+        repoListViewModel?.numberOfItems() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RepoCell.reuseID) as? RepoCell
-        
-        cell?.nameLabel.text = "RRR"
-        cell?.descriptionLabel.text = "Description scription Description Description DescriptionDescription Description Description DescriptionDescription scription Description Description DescriptionD Description"
-        cell?.avatarView.image = UIImage(systemName: "hare")
+        cell?.viewModel = repoListViewModel?.repoCellViewModel(forIndexPath: indexPath)
         return cell ?? UITableViewCell()
+    }
+}
+
+
+extension ReposViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("Suchen")
+        return true
     }
 }
