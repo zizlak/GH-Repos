@@ -30,7 +30,7 @@ class DataFetcherService {
     
     
     //MARK: - Repos by keyword
-    func fetchReposBy(keyword: String, completion: @escaping(Result<FilteredRepos, ReposError>) -> Void) {
+    func fetchReposContaining(_ keyword: String, completion: @escaping(Result<FilteredRepos, ReposError>) -> Void) {
         let urlModel = URLModel(scheme: "https",
                                 host: "api.github.com",
                                 path: ["search", "repositories"],

@@ -15,7 +15,7 @@ extension UINavigationBar {
         UINavigationBar.appearance().barTintColor = Colors.second
         UINavigationBar.appearance().tintColor = Colors.first
         
-        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.fourth]
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.fourth]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.third]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.third]
     }
 }

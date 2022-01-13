@@ -58,6 +58,9 @@
 		A07C252B2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */; };
 		A07C252C2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */; };
 		A07C252D2790144E00EDEEEA /* Extensions-NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */; };
+		A07C252F279026E300EDEEEA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252E279026E300EDEEEA /* Box.swift */; };
+		A07C2530279026E300EDEEEA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252E279026E300EDEEEA /* Box.swift */; };
+		A07C2531279026E300EDEEEA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C252E279026E300EDEEEA /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,7 @@
 		A07C25212790035500EDEEEA /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		A07C25252790036000EDEEEA /* RepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellViewModel.swift; sourceTree = "<group>"; };
 		A07C252A2790144E00EDEEEA /* Extensions-NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions-NavBar.swift"; sourceTree = "<group>"; };
+		A07C252E279026E300EDEEEA /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				A03E8AFD278EE6E9008E34C2 /* ReposError.swift */,
+				A07C252E279026E300EDEEEA /* Box.swift */,
 				A07C25292790142300EDEEEA /* Extensions */,
 				A07C250D278F0A1200EDEEEA /* Colors.swift */,
 				A07C251D278F0E8200EDEEEA /* Constants.swift */,
@@ -392,6 +397,7 @@
 				A07C250C278F098000EDEEEA /* Extensions-UIView.swift in Sources */,
 				A03E8B0A278EF0A4008E34C2 /* URLModel.swift in Sources */,
 				A07C25222790035500EDEEEA /* RepoListViewModel.swift in Sources */,
+				A07C252F279026E300EDEEEA /* Box.swift in Sources */,
 				A03E8AF8278EE5F3008E34C2 /* NetworkService.swift in Sources */,
 				A03E8ACA278EE450008E34C2 /* SceneDelegate.swift in Sources */,
 				A07C251A278F0D5700EDEEEA /* RepoCell.swift in Sources */,
@@ -415,6 +421,7 @@
 				A07C2515278F0A2700EDEEEA /* SceneDelegate.swift in Sources */,
 				A03E8ADF278EE452008E34C2 /* GH_ReposTests.swift in Sources */,
 				A07C25232790035500EDEEEA /* RepoListViewModel.swift in Sources */,
+				A07C2530279026E300EDEEEA /* Box.swift in Sources */,
 				A07C2513278F0A2500EDEEEA /* AppDelegate.swift in Sources */,
 				A03E8AFF278EE6E9008E34C2 /* ReposError.swift in Sources */,
 				A07C251B278F0D5700EDEEEA /* RepoCell.swift in Sources */,
@@ -434,6 +441,7 @@
 				A03E8AFA278EE5F3008E34C2 /* NetworkService.swift in Sources */,
 				A07C251C278F0D5700EDEEEA /* RepoCell.swift in Sources */,
 				A03E8B0C278EF0A4008E34C2 /* URLModel.swift in Sources */,
+				A07C2531279026E300EDEEEA /* Box.swift in Sources */,
 				A03E8B00278EE6E9008E34C2 /* ReposError.swift in Sources */,
 				A07C25242790035500EDEEEA /* RepoListViewModel.swift in Sources */,
 				A07C2512278F0A1E00EDEEEA /* Extensions-UIView.swift in Sources */,

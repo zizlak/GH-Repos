@@ -30,11 +30,12 @@ class NetworkService: NetworkServiceProtocol {
                     completion(.failure(.unableToComplete))
                     return
                 }
-                guard let response = response as? HTTPURLResponse,
-                      response.statusCode == 200 else {
-                          completion(.failure(.invalidResponse))
-                          return
-                      }
+//                guard let response = response as? HTTPURLResponse,
+//                      response.statusCode == 200 else {
+//                          completion(.failure(.invalidResponse))
+                          print((response as? HTTPURLResponse)?.statusCode)
+//                          return
+//                      }
                 guard let data = data else {
                     completion(.failure(.invalidData))
                     return

@@ -32,7 +32,7 @@ class ReposViewController: UIViewController {
         repoListViewModel = RepoListViewModel(){ [unowned self] in
             self.tableView.reloadData()
         }
-        repoListViewModel?.fetchStories()
+        repoListViewModel?.fetchAllRepos()
     }
     
     private func setupViewController() {
@@ -44,7 +44,7 @@ class ReposViewController: UIViewController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search repositories"
-        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.searchTextField.delegate = self
         
         navigationItem.searchController = searchController
@@ -66,13 +66,8 @@ class ReposViewController: UIViewController {
 extension ReposViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let keyword = searchController.searchBar.text else { return }
-        if keyword.isEmpty {
-            print("Empty")
-        }
-        print(keyword)
+        repoListViewModel?.searchTextDidChange(to: keyword)
     }
-    
-    
 }
 
 extension ReposViewController: UITableViewDataSource {
@@ -90,7 +85,8 @@ extension ReposViewController: UITableViewDataSource {
 
 extension ReposViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("Suchen")
+        guard let keyword = textField.text else { return false }
+        repoListViewModel?.fetchReposContaining(keyword)
         return true
     }
 }
