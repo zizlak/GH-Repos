@@ -46,7 +46,7 @@ class RepoCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        avatarView.image = Constants.defaultImage
+        avatarView.image = Constants.defaultAvatar
     }
     
     
@@ -69,6 +69,7 @@ class RepoCell: UITableViewCell {
             avatarView.widthAnchor.constraint(equalToConstant: imageSize),
             avatarView.heightAnchor.constraint(equalTo: avatarView.widthAnchor),
         ])
+        avatarView.image = Constants.defaultAvatar
     }
     
     private func setupNameLabel() {
@@ -108,8 +109,9 @@ class RepoCell: UITableViewCell {
         
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
-        viewModel.fetchImage() { [weak self] in
-            self?.avatarView.image = $0
+        
+        viewModel.avatar.bind { [weak self] image in
+            self?.avatarView.image = image
         }
     }
 }

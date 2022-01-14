@@ -11,7 +11,7 @@ enum Constants {
     static let cellImageWidth: CGFloat = 60
     static let standartPadding: CGFloat = 5
     
-    static let defaultImage = UIImage(systemName: "hare")
+    static let defaultAvatar = UIImage(named: "defaultAvatar")
     
     struct RepoCell {
         static let noName = "No Name"

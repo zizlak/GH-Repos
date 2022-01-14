@@ -15,7 +15,7 @@ protocol RepoListViewModelProtocol {
     func fetchReposContaining(_ keyword: String) -> Void
     func searchTextDidChange(to keyword: String) -> Void
     
-    var errorString: Box<String?> {get set}
+    var errorString: Box<String?> { get }
 }
 
 class RepoListViewModel : RepoListViewModelProtocol {
