@@ -74,7 +74,6 @@ class RepoListViewModel : RepoListViewModelProtocol {
         }
     }
     
-    
     func numberOfItems() -> Int {
         repos.count
     }

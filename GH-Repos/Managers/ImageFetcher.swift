@@ -32,7 +32,6 @@ class ImageFetcher {
         
         if let image = cache.object(forKey: cacheKey) {
             completion(image)
-            print("From Cache")
             return
         }
         
@@ -44,7 +43,6 @@ class ImageFetcher {
                 guard let image = UIImage(data: data) else { return }
                 self.cache.setObject(image, forKey: cacheKey)
                 
-                print("Saved To Cache")
                 DispatchQueue.main.async { completion(image) }
             case .failure(_):
                 DispatchQueue.main.async { completion(nil) }

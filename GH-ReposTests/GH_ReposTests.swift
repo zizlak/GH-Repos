@@ -9,28 +9,53 @@ import XCTest
 @testable import GH_Repos
 
 class GH_ReposTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    //
+    //    override func setUpWithError() throws {
+    //    }
+    //
+    //    override func tearDownWithError() throws {
+    //    }
+    //
+    //    func testExample() throws {
+    //
+    //    }
+    
+    //    func testPerformanceExample() throws {
+    //        self.measure {
+    //        }
+    //    }
+    
+    //MARK: - Name
+    func testRepoCellViewModelNameExists() {
+        let repoModel = RepoModel(full_name: "Boo/Baz")
+        let sut: RepoCellViewModelProtocol = RepoCellViewModel(repoModel: repoModel)
+        
+        XCTAssert(sut.name == "Boo Baz", "name schould be == Boo Baz")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testRepoCellViewModelNameNotExist() {
+        let repoModel = RepoModel()
+        let name = Constants.RepoCell.noName
+        let sut: RepoCellViewModelProtocol = RepoCellViewModel(repoModel: repoModel)
+        
+        XCTAssert(sut.name == name, "name schould be == \(name)")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    
+    //MARK: - Description
+    func testRepoCellViewModelDescriptionExists() {
+        let repoModel = RepoModel(description: "Foo")
+        let sut: RepoCellViewModelProtocol = RepoCellViewModel(repoModel: repoModel)
+        
+        XCTAssert(sut.description == "Foo", "name schould be == Foo")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testRepoCellViewModelDescriptionNotExist() {
+        let repoModel = RepoModel()
+        let description = Constants.RepoCell.noDescription
+        let sut: RepoCellViewModelProtocol = RepoCellViewModel(repoModel: repoModel)
+        
+        XCTAssert(sut.description == description, "name schould be == \(description)")
     }
-
+    
 }

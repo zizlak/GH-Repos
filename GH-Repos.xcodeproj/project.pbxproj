@@ -67,6 +67,8 @@
 		A07C25372790B45000EDEEEA /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25362790B45000EDEEEA /* ImageFetcher.swift */; };
 		A07C25382790B45000EDEEEA /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25362790B45000EDEEEA /* ImageFetcher.swift */; };
 		A07C25392790B45000EDEEEA /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25362790B45000EDEEEA /* ImageFetcher.swift */; };
+		A07C253A2791D7FC00EDEEEA /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8ACB278EE450008E34C2 /* ReposViewController.swift */; };
+		A07C253B2791D7FD00EDEEEA /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8ACB278EE450008E34C2 /* ReposViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -432,6 +434,7 @@
 				A07C251F278F0E8200EDEEEA /* Constants.swift in Sources */,
 				A07C252C2790144E00EDEEEA /* Extensions-UINavBar.swift in Sources */,
 				A07C2515278F0A2700EDEEEA /* SceneDelegate.swift in Sources */,
+				A07C253A2791D7FC00EDEEEA /* ReposViewController.swift in Sources */,
 				A03E8ADF278EE452008E34C2 /* GH_ReposTests.swift in Sources */,
 				A07C25232790035500EDEEEA /* RepoListViewModel.swift in Sources */,
 				A07C2530279026E300EDEEEA /* Box.swift in Sources */,
@@ -449,6 +452,7 @@
 				A07C2514278F0A2500EDEEEA /* AppDelegate.swift in Sources */,
 				A07C252D2790144E00EDEEEA /* Extensions-UINavBar.swift in Sources */,
 				A03E8AEB278EE452008E34C2 /* GH_ReposUITestsLaunchTests.swift in Sources */,
+				A07C253B2791D7FD00EDEEEA /* ReposViewController.swift in Sources */,
 				A07C2510278F0A1B00EDEEEA /* Colors.swift in Sources */,
 				A03E8B15278EF614008E34C2 /* RepoModel.swift in Sources */,
 				A07C25282790036000EDEEEA /* RepoCellViewModel.swift in Sources */,

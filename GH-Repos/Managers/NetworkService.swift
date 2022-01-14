@@ -18,7 +18,6 @@ class NetworkService: NetworkServiceProtocol {
     func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void) {        
         let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)
-        print("Task Resume")
         task.resume()
     }
     

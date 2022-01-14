@@ -20,12 +20,12 @@ class RepoCellViewModel: RepoCellViewModelProtocol {
     let repoModel: RepoModel
     
     var name: String {
-        let name = repoModel.full_name ?? "No Title"
+        let name = repoModel.full_name ?? Constants.RepoCell.noName
         return name.replacingOccurrences(of: "/", with: " ")
     }
     
     var description: String {
-        repoModel.description ?? "No Description"
+        repoModel.description ?? Constants.RepoCell.noDescription
     }
     
     //MARK: - Methods

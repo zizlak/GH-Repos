@@ -23,7 +23,7 @@ class RepoCell: UITableViewCell {
     private let padding = Constants.standartPadding
     private let imageSize = Constants.cellImageWidth
     
-    weak var viewModel: RepoCellViewModelProtocol? {
+    var viewModel: RepoCellViewModelProtocol? {
         didSet { configureUI() }
     }
     
@@ -42,6 +42,11 @@ class RepoCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        avatarView.image = Constants.defaultImage
     }
     
     
