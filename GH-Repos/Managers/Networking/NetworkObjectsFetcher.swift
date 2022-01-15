@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol DataFetcherProtocol {
+protocol ObjectsFetcherProtocol {
     func fetchGenericJSONData<T: Decodable>(url: URL, completion: @escaping(Result<T, ReposError>) -> Void)
 }
 
-class NetworkDataFetcher: DataFetcherProtocol {
+class NetworkObjectsFetcher: ObjectsFetcherProtocol {
     
     //MARK: - Dependency
     private var networkService: NetworkServiceProtocol

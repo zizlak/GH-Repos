@@ -13,14 +13,14 @@ class ReposViewController: UIViewController {
     private let tableView = UITableView()
     
     //MARK: - Properties
-    var repoListViewModel: RepoListViewModelProtocol?
+    var reposListViewModel: ReposListViewModelProtocol?
     
     //MARK: - LifeCycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupRepoListViewModel()
+        setupReposListViewModel()
         setupViewController()
         setupSearchController()
         setupTableView()
@@ -28,15 +28,15 @@ class ReposViewController: UIViewController {
 
     
     //MARK: - Methods
-    private func setupRepoListViewModel() {
-        repoListViewModel = RepoListViewModel(){ [unowned self] in
+    private func setupReposListViewModel() {
+        reposListViewModel = ReposListViewModel(){ [unowned self] in
             self.tableView.reloadData()
         }
-        repoListViewModel?.errorString.bind(listener: { [unowned self] in
+        reposListViewModel?.errorString.bind(listener: { [unowned self] in
             guard let error = $0 else { return }
             self.popUp(message: error)
         })
-        repoListViewModel?.fetchAllRepos()
+        reposListViewModel?.fetchAllRepos()
     }
     
     private func setupViewController() {
@@ -77,12 +77,12 @@ class ReposViewController: UIViewController {
 
 extension ReposViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        repoListViewModel?.numberOfItems() ?? 0
+        reposListViewModel?.numberOfItems() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RepoCell.reuseID) as? RepoCell
-        cell?.viewModel = repoListViewModel?.repoCellViewModel(forIndexPath: indexPath)
+        cell?.viewModel = reposListViewModel?.repoCellViewModel(forIndexPath: indexPath)
         return cell ?? UITableViewCell()
     }
 }
@@ -90,14 +90,14 @@ extension ReposViewController: UITableViewDataSource {
 extension ReposViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let keyword = searchController.searchBar.text
-        repoListViewModel?.searchTextDidChangeTo(keyword)
+        reposListViewModel?.searchTextDidChangeTo(keyword)
     }
 }
 
 extension ReposViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let keyword = textField.text
-        repoListViewModel?.fetchReposContaining(keyword)
+        reposListViewModel?.fetchReposContaining(keyword)
         return true
     }
 }

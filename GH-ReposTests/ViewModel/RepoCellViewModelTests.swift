@@ -39,5 +39,4 @@ class RepoCellViewModelTests: XCTestCase {
         XCTAssert(sut.description == description, "name schould be = \(description)")
         XCTAssert(sut.name == name, "name schould be = \(name)")
     }
-    
 }

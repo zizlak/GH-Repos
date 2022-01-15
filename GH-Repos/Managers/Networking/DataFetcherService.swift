@@ -10,11 +10,11 @@ import Foundation
 class DataFetcherService {
     
     //MARK: - Dependency
-    private var networkDataFetcher: DataFetcherProtocol
+    private var networkDataFetcher: ObjectsFetcherProtocol
     
     
     //MARK: - Init
-    init(networkDataFetcher: DataFetcherProtocol = NetworkDataFetcher()) {
+    init(networkDataFetcher: ObjectsFetcherProtocol = NetworkObjectsFetcher()) {
         self.networkDataFetcher = networkDataFetcher
     }
     

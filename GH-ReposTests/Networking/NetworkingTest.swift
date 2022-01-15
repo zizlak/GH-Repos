@@ -12,54 +12,98 @@ class NetworkingTest: XCTestCase {
     
     var urlStringRepos: String!
     var urlRepos: URL!
+    var keyWord: String!
     
     //MARK: - LifeCycle Methods
     override func setUp() {
         super.setUp()
         urlStringRepos = "https://api.github.com/repositories"
         urlRepos = URL(string: urlStringRepos)
+        keyWord = "swift"
     }
     
     override func tearDown() {
         urlStringRepos = nil
+        keyWord = nil
+        urlRepos = nil
         super.tearDown()
     }
     
-    //MARK: - ModelURL
-    func testURLModelURL() {
-        
-        let sut = URLModel(scheme: "https",
-                           host: "api.github.com",
-                           path: ["repositories"])
-        
-        XCTAssertEqual(sut.url, urlRepos, "URL is not equal to: " + urlStringRepos)
-    }
-    
-    
-    func testURLModelURLWithQueryItems() {
-        
-        let sut = URLModel(scheme: "https",
-                           host: "api.github.com",
-                           path: ["search", "repositories"],
-                           queryItems: [URLQueryItem(name: "q", value: "foo")])
-        
-        let urlString = "https://api.github.com/search/repositories?q=foo"
-        let url = URL(string: urlString)
-        
-        XCTAssertEqual(sut.url, url, "URL is not equal to https://api.github.com/search/repositories?q=foo")
-    }
-    
-    
     //MARK: - NetworkService
-    func testNetworkService() {
+    func testNetworkServiceRequestDataNotNil() {
         let sut = NetworkService()
+        let promise = expectation(description: "Request Data")
         sut.request(url: urlRepos) { result in
             switch result {
             case .success(let data):
-                XCTAssertNotNil(data)
+                XCTAssertNotNil(data, "data schuldn't be nil")
+                promise.fulfill()
             case .failure(let error):
                 XCTFail(error.rawValue)
             }
         }
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testNetworkServiceUnableToComplete() {
+        let sut = NetworkService()
+        let brokenURLString = "https://api.github.c/repositories"
+        let brokenURL = URL(string: brokenURLString)!
+        let promise = expectation(description: "Request Data")
+        sut.request(url: brokenURL) { result in
+            switch result {
+            case .success(_):
+                XCTFail("Data schould be nil")
+            case .failure(let error):
+                XCTAssertTrue(error == .unableToComplete, "Error schould be unableToComplete")
+                promise.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testNetworkObjectsFetcherWithRepos() {
+        let sut = NetworkObjectsFetcher()
+        let promise = expectation(description: "Fetching RepoModel JSON Data")
+        
+        let completion: (Result<[RepoModel], ReposError>) -> Void = { result in
+            switch result {
+            case .success(let repos):
+                XCTAssertNotNil(repos, "repos schouldn't be nil")
+                XCTAssertFalse(repos.isEmpty, "repos schould be not empty")
+                promise.fulfill()
+            
+            case .failure(let error):
+                XCTFail(error.rawValue)
+            }
+        }
+        sut.fetchGenericJSONData(url: urlRepos, completion: completion)
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    
+    func testNetworkObjectsFetcherWithFilteredRepos() {
+        let sut = NetworkObjectsFetcher()
+        let promise = expectation(description: "Fetching Filtered Repos JSON Data")
+        
+        let urlString = "https://api.github.com/search/repositories?q=" + keyWord
+        guard let url = URL(string: urlString) else {
+            XCTFail("URL incorrect")
+            return
+        }
+        
+        let completion: (Result<FilteredRepos, ReposError>) -> Void = { result in
+            switch result {
+            case .success(let result):
+                XCTAssertNotNil(result.items, "repos schouldn't be nil")
+                XCTAssertTrue(result.items!.count > 10, "items schould be > 10")
+                promise.fulfill()
+            
+            case .failure(let error):
+                XCTFail(error.rawValue)
+            }
+        }
+        sut.fetchGenericJSONData(url: url, completion: completion)
+        waitForExpectations(timeout: 1)
     }
 }

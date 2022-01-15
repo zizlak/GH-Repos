@@ -1,5 +1,5 @@
 //
-//  RepoListViewModel.swift
+//  ReposListViewModel.swift
 //  GH-Repos
 //
 //  Created by Aleksandr Kurdiukov on 13.01.22.
@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: - Protocol
-protocol RepoListViewModelProtocol {
+protocol ReposListViewModelProtocol {
     init(listener: (() -> Void)?)
     
     func numberOfItems() -> Int
@@ -21,7 +21,7 @@ protocol RepoListViewModelProtocol {
     var errorString: Box<String?> { get }
 }
 
-class RepoListViewModel : RepoListViewModelProtocol {
+class ReposListViewModel : ReposListViewModelProtocol {
 
     //MARK: - Properties
     typealias Listener = () -> ()

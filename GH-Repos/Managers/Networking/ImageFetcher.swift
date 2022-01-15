@@ -22,16 +22,21 @@ class ImageFetcher {
     //MARK: - Methods
     func fetchImageData(urlString: String?, completion: @escaping(UIImage?) -> Void) {
         
-        guard let urlString = urlString,
-              let url = URL(string: urlString) else {
-                  completion(nil)
-                  return
-              }
+        guard let urlString = urlString else {
+            completion(nil)
+            return
+        }
         
-        let cacheKey = NSString(string: urlString)
-        
-        if let image = cache.object(forKey: cacheKey) {
+        if let image = getImageFromCache(for: urlString) {
             completion(image)
+            return
+        }
+        requestImageFrom(urlString, completion: completion)
+    }
+    
+    private func requestImageFrom(_ urlString: String, completion: @escaping(UIImage?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            completion(nil)
             return
         }
         
@@ -40,13 +45,26 @@ class ImageFetcher {
             
             switch result {
             case .success(let data):
-                guard let image = UIImage(data: data) else { return }
-                self.cache.setObject(image, forKey: cacheKey)
+                guard let image = UIImage(data: data) else {
+                    completion(nil)
+                    return
+                }
+                self.saveImageToCache(image: image, for: urlString)
                 
                 completion(image)
             case .failure(_):
                 completion(nil)
             }
         }
+    }
+    
+    func getImageFromCache(for key: String) -> UIImage? {
+        let cacheKey = NSString(string: key)
+        return cache.object(forKey: cacheKey)
+    }
+    
+    private func saveImageToCache(image: UIImage, for key: String) {
+        let cacheKey = NSString(string: key)
+        cache.setObject(image, forKey: cacheKey)
     }
 }

@@ -21,9 +21,9 @@
 		A03E8AFE278EE6E9008E34C2 /* ReposError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* ReposError.swift */; };
 		A03E8AFF278EE6E9008E34C2 /* ReposError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* ReposError.swift */; };
 		A03E8B00278EE6E9008E34C2 /* ReposError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* ReposError.swift */; };
-		A03E8B02278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkDataFetcher.swift */; };
-		A03E8B03278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkDataFetcher.swift */; };
-		A03E8B04278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkDataFetcher.swift */; };
+		A03E8B02278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */; };
+		A03E8B03278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */; };
+		A03E8B04278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */; };
 		A03E8B06278EEE2D008E34C2 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B05278EEE2D008E34C2 /* DataFetcherService.swift */; };
 		A03E8B07278EEE2D008E34C2 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B05278EEE2D008E34C2 /* DataFetcherService.swift */; };
 		A03E8B08278EEE2D008E34C2 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B05278EEE2D008E34C2 /* DataFetcherService.swift */; };
@@ -49,9 +49,9 @@
 		A07C251E278F0E8200EDEEEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C251D278F0E8200EDEEEA /* Constants.swift */; };
 		A07C251F278F0E8200EDEEEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C251D278F0E8200EDEEEA /* Constants.swift */; };
 		A07C2520278F0E8200EDEEEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C251D278F0E8200EDEEEA /* Constants.swift */; };
-		A07C25222790035500EDEEEA /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* RepoListViewModel.swift */; };
-		A07C25232790035500EDEEEA /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* RepoListViewModel.swift */; };
-		A07C25242790035500EDEEEA /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* RepoListViewModel.swift */; };
+		A07C25222790035500EDEEEA /* ReposListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* ReposListViewModel.swift */; };
+		A07C25232790035500EDEEEA /* ReposListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* ReposListViewModel.swift */; };
+		A07C25242790035500EDEEEA /* ReposListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25212790035500EDEEEA /* ReposListViewModel.swift */; };
 		A07C25262790036000EDEEEA /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25252790036000EDEEEA /* RepoCellViewModel.swift */; };
 		A07C25272790036000EDEEEA /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25252790036000EDEEEA /* RepoCellViewModel.swift */; };
 		A07C25282790036000EDEEEA /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25252790036000EDEEEA /* RepoCellViewModel.swift */; };
@@ -71,6 +71,9 @@
 		A07C253B2791D7FD00EDEEEA /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8ACB278EE450008E34C2 /* ReposViewController.swift */; };
 		A07C25402792BE3900EDEEEA /* RepoModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C253F2792BE3900EDEEEA /* RepoModelTests.swift */; };
 		A07C25442792D00E00EDEEEA /* NetworkingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C25422792D00E00EDEEEA /* NetworkingTest.swift */; };
+		A07C254627932F9100EDEEEA /* URLModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C254527932F9100EDEEEA /* URLModelTest.swift */; };
+		A07C2548279330B100EDEEEA /* TestImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C2547279330B100EDEEEA /* TestImageFetcher.swift */; };
+		A07C254A279341B500EDEEEA /* ReposListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C2549279341B500EDEEEA /* ReposListViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +108,7 @@
 		A03E8AEA278EE452008E34C2 /* GH_ReposUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GH_ReposUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A03E8AF7278EE5F3008E34C2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A03E8AFD278EE6E9008E34C2 /* ReposError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposError.swift; sourceTree = "<group>"; };
-		A03E8B01278EEA8D008E34C2 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObjectsFetcher.swift; sourceTree = "<group>"; };
 		A03E8B05278EEE2D008E34C2 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		A03E8B09278EF0A4008E34C2 /* URLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLModel.swift; sourceTree = "<group>"; };
 		A03E8B12278EF614008E34C2 /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
@@ -113,7 +116,7 @@
 		A07C250D278F0A1200EDEEEA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A07C2519278F0D5700EDEEEA /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		A07C251D278F0E8200EDEEEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A07C25212790035500EDEEEA /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		A07C25212790035500EDEEEA /* ReposListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListViewModel.swift; sourceTree = "<group>"; };
 		A07C25252790036000EDEEEA /* RepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellViewModel.swift; sourceTree = "<group>"; };
 		A07C252A2790144E00EDEEEA /* Extensions-UINavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions-UINavBar.swift"; sourceTree = "<group>"; };
 		A07C252E279026E300EDEEEA /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -121,6 +124,9 @@
 		A07C25362790B45000EDEEEA /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		A07C253F2792BE3900EDEEEA /* RepoModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModelTests.swift; sourceTree = "<group>"; };
 		A07C25422792D00E00EDEEEA /* NetworkingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTest.swift; sourceTree = "<group>"; };
+		A07C254527932F9100EDEEEA /* URLModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLModelTest.swift; sourceTree = "<group>"; };
+		A07C2547279330B100EDEEEA /* TestImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestImageFetcher.swift; sourceTree = "<group>"; };
+		A07C2549279341B500EDEEEA /* ReposListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,9 +190,9 @@
 		A03E8ADD278EE452008E34C2 /* GH-ReposTests */ = {
 			isa = PBXGroup;
 			children = (
-				A07C25412792CFF100EDEEEA /* Networking */,
 				A07C253E2792BE2800EDEEEA /* Model */,
 				A07C253D2792BE2000EDEEEA /* ViewModel */,
+				A07C25412792CFF100EDEEEA /* Networking */,
 			);
 			path = "GH-ReposTests";
 			sourceTree = "<group>";
@@ -252,7 +258,7 @@
 		A07C2518278F0CC500EDEEEA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A07C25212790035500EDEEEA /* RepoListViewModel.swift */,
+				A07C25212790035500EDEEEA /* ReposListViewModel.swift */,
 				A07C25252790036000EDEEEA /* RepoCellViewModel.swift */,
 			);
 			path = ViewModel;
@@ -273,7 +279,7 @@
 			children = (
 				A03E8B09278EF0A4008E34C2 /* URLModel.swift */,
 				A03E8AF7278EE5F3008E34C2 /* NetworkService.swift */,
-				A03E8B01278EEA8D008E34C2 /* NetworkDataFetcher.swift */,
+				A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */,
 				A03E8B05278EEE2D008E34C2 /* DataFetcherService.swift */,
 				A07C25362790B45000EDEEEA /* ImageFetcher.swift */,
 			);
@@ -284,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				A03E8ADE278EE452008E34C2 /* RepoCellViewModelTests.swift */,
+				A07C2549279341B500EDEEEA /* ReposListViewModelTest.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -300,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				A07C25422792D00E00EDEEEA /* NetworkingTest.swift */,
+				A07C254527932F9100EDEEEA /* URLModelTest.swift */,
+				A07C2547279330B100EDEEEA /* TestImageFetcher.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -435,7 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07C25262790036000EDEEEA /* RepoCellViewModel.swift in Sources */,
-				A03E8B02278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */,
+				A03E8B02278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */,
 				A07C250E278F0A1200EDEEEA /* Colors.swift in Sources */,
 				A03E8B06278EEE2D008E34C2 /* DataFetcherService.swift in Sources */,
 				A03E8ACC278EE450008E34C2 /* ReposViewController.swift in Sources */,
@@ -447,7 +456,7 @@
 				A07C252B2790144E00EDEEEA /* Extensions-UINavBar.swift in Sources */,
 				A07C250C278F098000EDEEEA /* Extensions-UIView.swift in Sources */,
 				A03E8B0A278EF0A4008E34C2 /* URLModel.swift in Sources */,
-				A07C25222790035500EDEEEA /* RepoListViewModel.swift in Sources */,
+				A07C25222790035500EDEEEA /* ReposListViewModel.swift in Sources */,
 				A07C252F279026E300EDEEEA /* Box.swift in Sources */,
 				A03E8AF8278EE5F3008E34C2 /* NetworkService.swift in Sources */,
 				A03E8ACA278EE450008E34C2 /* SceneDelegate.swift in Sources */,
@@ -461,20 +470,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07C25272790036000EDEEEA /* RepoCellViewModel.swift in Sources */,
+				A07C254A279341B500EDEEEA /* ReposListViewModelTest.swift in Sources */,
 				A03E8B07278EEE2D008E34C2 /* DataFetcherService.swift in Sources */,
 				A07C250F278F0A1B00EDEEEA /* Colors.swift in Sources */,
 				A07C2511278F0A1E00EDEEEA /* Extensions-UIView.swift in Sources */,
 				A03E8B14278EF614008E34C2 /* RepoModel.swift in Sources */,
+				A07C2548279330B100EDEEEA /* TestImageFetcher.swift in Sources */,
+				A07C254627932F9100EDEEEA /* URLModelTest.swift in Sources */,
 				A07C25382790B45000EDEEEA /* ImageFetcher.swift in Sources */,
 				A03E8B0B278EF0A4008E34C2 /* URLModel.swift in Sources */,
-				A03E8B03278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */,
+				A03E8B03278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */,
 				A03E8AF9278EE5F3008E34C2 /* NetworkService.swift in Sources */,
 				A07C251F278F0E8200EDEEEA /* Constants.swift in Sources */,
 				A07C252C2790144E00EDEEEA /* Extensions-UINavBar.swift in Sources */,
 				A07C2515278F0A2700EDEEEA /* SceneDelegate.swift in Sources */,
 				A07C253A2791D7FC00EDEEEA /* ReposViewController.swift in Sources */,
 				A03E8ADF278EE452008E34C2 /* RepoCellViewModelTests.swift in Sources */,
-				A07C25232790035500EDEEEA /* RepoListViewModel.swift in Sources */,
+				A07C25232790035500EDEEEA /* ReposListViewModel.swift in Sources */,
 				A07C2530279026E300EDEEEA /* Box.swift in Sources */,
 				A07C25402792BE3900EDEEEA /* RepoModelTests.swift in Sources */,
 				A07C25442792D00E00EDEEEA /* NetworkingTest.swift in Sources */,
@@ -502,10 +514,10 @@
 				A07C25392790B45000EDEEEA /* ImageFetcher.swift in Sources */,
 				A07C2531279026E300EDEEEA /* Box.swift in Sources */,
 				A03E8B00278EE6E9008E34C2 /* ReposError.swift in Sources */,
-				A07C25242790035500EDEEEA /* RepoListViewModel.swift in Sources */,
+				A07C25242790035500EDEEEA /* ReposListViewModel.swift in Sources */,
 				A07C2512278F0A1E00EDEEEA /* Extensions-UIView.swift in Sources */,
 				A03E8AE9278EE452008E34C2 /* GH_ReposUITests.swift in Sources */,
-				A03E8B04278EEA8D008E34C2 /* NetworkDataFetcher.swift in Sources */,
+				A03E8B04278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */,
 				A07C2520278F0E8200EDEEEA /* Constants.swift in Sources */,
 				A07C253527908A7200EDEEEA /* Extensions-UIViewController.swift in Sources */,
 				A03E8B08278EEE2D008E34C2 /* DataFetcherService.swift in Sources */,
