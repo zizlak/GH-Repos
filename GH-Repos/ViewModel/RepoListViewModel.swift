@@ -7,13 +7,16 @@
 
 import Foundation
 
+//MARK: - Protocol
 protocol RepoListViewModelProtocol {
+    init(listener: (() -> Void)?)
+    
     func numberOfItems() -> Int
     func repoCellViewModel(forIndexPath indexPath: IndexPath) -> RepoCellViewModelProtocol?
     
     func fetchAllRepos()
-    func fetchReposContaining(_ keyword: String) -> Void
-    func searchTextDidChange(to keyword: String) -> Void
+    func fetchReposContaining(_ keyword: String?) -> Void
+    func searchTextDidChangeTo(_ keyword: String?) -> Void
     
     var errorString: Box<String?> { get }
 }
@@ -33,7 +36,7 @@ class RepoListViewModel : RepoListViewModelProtocol {
     
     
     //MARK: - Init
-    init(listener: Listener?) {
+    required init(listener: Listener?) {
         self.reposDidChange = listener
     }
     
@@ -50,7 +53,8 @@ class RepoListViewModel : RepoListViewModelProtocol {
         }
     }
     
-    func fetchReposContaining(_ keyword: String) {
+    func fetchReposContaining(_ keyword: String?) {
+        guard let keyword = keyword else { return }
         guard !keyword.isEmpty else {
             fetchAllRepos()
             return
@@ -68,7 +72,8 @@ class RepoListViewModel : RepoListViewModelProtocol {
         }
     }
     
-    func searchTextDidChange(to keyword: String) {
+    func searchTextDidChangeTo(_ keyword: String?) {
+        guard let keyword = keyword else { return }
         if keyword.isEmpty {
             fetchAllRepos()
         }
@@ -79,7 +84,7 @@ class RepoListViewModel : RepoListViewModelProtocol {
     }
     
     func repoCellViewModel(forIndexPath indexPath: IndexPath) -> RepoCellViewModelProtocol? {
-        guard repos.count >= indexPath.row else { return nil }
+        guard repos.count > indexPath.row else { return nil }
         return RepoCellViewModel(repoModel: repos[indexPath.row])
     }
 }

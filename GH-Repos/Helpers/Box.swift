@@ -9,7 +9,7 @@ import Foundation
 
 class Box<T> {
     
-    typealias Listener = (T) -> Void
+    typealias BoxListener = (T) -> Void
     
     var value: T {
         didSet {
@@ -17,9 +17,9 @@ class Box<T> {
         }
     }
     
-    private var listener: Listener?
+    private var listener: BoxListener?
     
-    func bind(listener: @escaping Listener) {
+    func bind(listener: @escaping BoxListener) {
         self.listener = listener
         listener(value)
     }

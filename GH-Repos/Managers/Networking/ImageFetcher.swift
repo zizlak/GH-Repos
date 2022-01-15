@@ -43,9 +43,9 @@ class ImageFetcher {
                 guard let image = UIImage(data: data) else { return }
                 self.cache.setObject(image, forKey: cacheKey)
                 
-                DispatchQueue.main.async { completion(image) }
+                completion(image)
             case .failure(_):
-                DispatchQueue.main.async { completion(nil) }
+                completion(nil)
             }
         }
     }

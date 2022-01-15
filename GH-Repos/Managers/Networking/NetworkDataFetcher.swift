@@ -43,6 +43,7 @@ class NetworkDataFetcher: DataFetcherProtocol {
     //MARK: - decodeJSON
     private func decodeJSON<T: Decodable>(type: T.Type, from data: Data) -> T? {
         let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         let objects = try? decoder.decode(T.self, from: data)
         return objects
     }

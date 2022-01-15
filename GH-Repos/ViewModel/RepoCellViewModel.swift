@@ -7,20 +7,22 @@
 
 import UIKit
 
+//MARK: - Protocol
 protocol RepoCellViewModelProtocol: AnyObject {
     var name : String { get }
     var description : String { get }
     
     var avatar: Box<UIImage?> { get }
+    func fetchImage()
 }
 
 class RepoCellViewModel: RepoCellViewModelProtocol {
 
     //MARK: - Properties
-    let repoModel: RepoModel
+    private let repoModel: RepoModel
     
     var name: String {
-        let name = repoModel.full_name ?? Constants.RepoCell.noName
+        let name = repoModel.fullName ?? Constants.RepoCell.noName
         return name.replacingOccurrences(of: "/", with: " ")
     }
     
@@ -34,12 +36,11 @@ class RepoCellViewModel: RepoCellViewModelProtocol {
     //MARK: - LifeCycle Methods
     init(repoModel: RepoModel) {
         self.repoModel = repoModel
-        fetchImage()
     }
     
     //MARK: - Methods
     func fetchImage() {
-        let imageURL = repoModel.owner?.avatar_url
+        let imageURL = repoModel.owner?.avatarUrl
         ImageFetcher.shared.fetchImageData(urlString: imageURL) { [weak self] image in
             guard let image = image else {
                 self?.avatar.value = Constants.defaultAvatar

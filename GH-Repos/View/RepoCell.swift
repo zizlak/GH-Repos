@@ -10,7 +10,6 @@ import UIKit
 class RepoCell: UITableViewCell {
     
     //MARK: - Interface
-    
     let avatarView = UIImageView()
     
     let nameLabel = UILabel()
@@ -18,10 +17,9 @@ class RepoCell: UITableViewCell {
     
     
     //MARK: - Properties
-    
     static let reuseID = String(describing: RepoCell.self)
     private let padding = Constants.standartPadding
-    private let imageSize = Constants.cellImageWidth
+    private let imageSize = Constants.cellAvatarWidth
     
     var viewModel: RepoCellViewModelProtocol? {
         didSet { configureUI() }
@@ -29,7 +27,6 @@ class RepoCell: UITableViewCell {
     
     
     //MARK: - LifeCycle Methods
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -38,7 +35,6 @@ class RepoCell: UITableViewCell {
         setupNameLabel()
         setupDescriptionLabel()
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -51,7 +47,6 @@ class RepoCell: UITableViewCell {
     
     
     //MARK: - Methods
-    
     private func setupCell() {
         self.backgroundColor = Colors.backGround
     }
@@ -59,8 +54,9 @@ class RepoCell: UITableViewCell {
     private func setupAvatarView() {
         addSubview(avatarView)
         avatarView.translatesAutoresizingMaskIntoConstraints = false
-        avatarView.layer.cornerRadius = Constants.cellImageWidth / 4
+        avatarView.layer.cornerRadius = Constants.cellAvatarWidth / 4
         avatarView.layer.masksToBounds = true
+        avatarView.image = Constants.defaultAvatar
         
         NSLayoutConstraint.activate([
             avatarView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: padding),
@@ -69,7 +65,6 @@ class RepoCell: UITableViewCell {
             avatarView.widthAnchor.constraint(equalToConstant: imageSize),
             avatarView.heightAnchor.constraint(equalTo: avatarView.widthAnchor),
         ])
-        avatarView.image = Constants.defaultAvatar
     }
     
     private func setupNameLabel() {
@@ -103,7 +98,7 @@ class RepoCell: UITableViewCell {
         ])
     }
     
-    //MARK: - configureUI
+    //MARK: - Configure UI
     private func configureUI() {
         guard let viewModel = viewModel else { return }
         
@@ -113,5 +108,6 @@ class RepoCell: UITableViewCell {
         viewModel.avatar.bind { [weak self] image in
             self?.avatarView.image = image
         }
+        viewModel.fetchImage()
     }
 }

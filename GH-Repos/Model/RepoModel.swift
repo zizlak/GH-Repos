@@ -9,13 +9,13 @@ import Foundation
 
 //MARK: - RepoModel
 struct RepoModel: Decodable {
-    var full_name : String?
+    var fullName : String?
     var description: String?
     var owner: Owner?
 }
 
 struct Owner: Decodable {
-    var avatar_url : String
+    var avatarUrl : String?
 }
 
 

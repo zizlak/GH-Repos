@@ -8,7 +8,7 @@
 import UIKit
 
 class ReposViewController: UIViewController {
-
+    
     //MARK: - Interface
     private let tableView = UITableView()
     
@@ -25,7 +25,7 @@ class ReposViewController: UIViewController {
         setupSearchController()
         setupTableView()
     }
-    
+
     
     //MARK: - Methods
     private func setupRepoListViewModel() {
@@ -41,7 +41,15 @@ class ReposViewController: UIViewController {
     
     private func setupViewController() {
         view.backgroundColor = Colors.backGround
-        title = "Repositories"
+        title = Constants.repositories
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func tapped() {
+        guard !tableView.visibleCells.isEmpty else { return }
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     private func setupSearchController() {
@@ -67,13 +75,6 @@ class ReposViewController: UIViewController {
 
 //MARK: - Extensions
 
-extension ReposViewController : UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let keyword = searchController.searchBar.text else { return }
-        repoListViewModel?.searchTextDidChange(to: keyword)
-    }
-}
-
 extension ReposViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         repoListViewModel?.numberOfItems() ?? 0
@@ -86,10 +87,16 @@ extension ReposViewController: UITableViewDataSource {
     }
 }
 
+extension ReposViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let keyword = searchController.searchBar.text
+        repoListViewModel?.searchTextDidChangeTo(keyword)
+    }
+}
 
 extension ReposViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let keyword = textField.text else { return false }
+        let keyword = textField.text
         repoListViewModel?.fetchReposContaining(keyword)
         return true
     }
