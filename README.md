@@ -3,7 +3,8 @@ List of GitHub repositories with ability to search by keyword
 
 Take-Home Project with implementation of: 
 - Programmatical interface, 
-- Autolayout, - UITableView, 
+- Autolayout, 
+- UITableView, 
 - UISearchController, 
 - Networking, 
 - MVVM Architecture, 
