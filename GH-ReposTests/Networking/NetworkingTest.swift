@@ -31,7 +31,7 @@ class NetworkingTest: XCTestCase {
     
     //MARK: - NetworkService
     func testNetworkServiceRequestDataNotNil() {
-        let sut = NetworkService()
+        let sut = NetworkRequestService()
         let promise = expectation(description: "Request Data")
         sut.request(url: urlRepos) { result in
             switch result {
@@ -46,7 +46,7 @@ class NetworkingTest: XCTestCase {
     }
     
     func testNetworkServiceUnableToComplete() {
-        let sut = NetworkService()
+        let sut = NetworkRequestService()
         let brokenURLString = "https://api.github.c/repositories"
         let brokenURL = URL(string: brokenURLString)!
         let promise = expectation(description: "Request Data")

@@ -8,12 +8,12 @@
 import Foundation
 
 //MARK: - Protocol
-protocol NetworkServiceProtocol {
+protocol NetworkRequestServiceProtocol {
     func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void)
 }
 
 
-class NetworkService: NetworkServiceProtocol {
+class NetworkRequestService: NetworkRequestServiceProtocol {
     
     //MARK: - Request
     func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void) {

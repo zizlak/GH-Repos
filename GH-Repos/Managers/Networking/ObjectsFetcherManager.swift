@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataFetcherService {
+class ObjectsFetcherManager {
     
     //MARK: - Dependency
     private var networkDataFetcher: ObjectsFetcherProtocol

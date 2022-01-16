@@ -15,10 +15,10 @@ protocol ObjectsFetcherProtocol {
 class NetworkObjectsFetcher: ObjectsFetcherProtocol {
     
     //MARK: - Dependency
-    private var networkService: NetworkServiceProtocol
+    private var networkService: NetworkRequestServiceProtocol
     
     //MARK: - Init
-    init(networkService: NetworkServiceProtocol = NetworkService()) {
+    init(networkService: NetworkRequestServiceProtocol = NetworkRequestService()) {
         self.networkService = networkService
     }
     

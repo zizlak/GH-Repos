@@ -43,7 +43,7 @@ class ReposListViewModel : ReposListViewModelProtocol {
     
     //MARK: - Methods
     func fetchAllRepos() {
-        DataFetcherService().fetchRepos() { [weak self] result in
+        ObjectsFetcherManager().fetchRepos() { [weak self] result in
             guard let self = self else { return }
             
             switch result {
@@ -63,7 +63,7 @@ class ReposListViewModel : ReposListViewModelProtocol {
             return
         }
         
-        DataFetcherService().fetchReposContaining(keyword) { [weak self] result in
+        ObjectsFetcherManager().fetchReposContaining(keyword) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let repos):

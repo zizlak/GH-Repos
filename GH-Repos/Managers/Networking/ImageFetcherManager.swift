@@ -7,15 +7,15 @@
 
 
 import UIKit
-class ImageFetcher {
+class ImageFetcherManager {
     
     //MARK: - Dependency
-    private var networkService: NetworkServiceProtocol = NetworkService()
+    private var networkService: NetworkRequestServiceProtocol = NetworkRequestService()
     
     private let cache = NSCache<NSString, UIImage>()
     
     //MARK: - Singeltone
-    static let shared = ImageFetcher()
+    static let shared = ImageFetcherManager()
     private init() {}
     
     

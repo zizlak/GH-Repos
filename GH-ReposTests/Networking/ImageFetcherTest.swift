@@ -8,10 +8,10 @@
 import XCTest
 @testable import GH_Repos
 
-class ImageFetcherTest: XCTestCase {
+class ImageFetcherManagerTest: XCTestCase {
     
     var avatarURLString: String!
-    var sut: ImageFetcher!
+    var sut: ImageFetcherManager!
     
     //MARK: - LifeCycle Methods
     override func setUp() {
@@ -54,7 +54,7 @@ class ImageFetcherTest: XCTestCase {
 
 
 //MARK: - MockObject
-extension ImageFetcherTest {
-    class MockImageFetcher: ImageFetcher {
+extension ImageFetcherManagerTest {
+    class MockImageFetcher: ImageFetcherManager {
     }
 }

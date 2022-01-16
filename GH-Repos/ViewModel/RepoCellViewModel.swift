@@ -41,7 +41,7 @@ class RepoCellViewModel: RepoCellViewModelProtocol {
     //MARK: - Methods
     func fetchImage() {
         let imageURL = repoModel.owner?.avatarUrl
-        ImageFetcher.shared.fetchImageData(urlString: imageURL) { [weak self] image in
+        ImageFetcherManager.shared.fetchImageData(urlString: imageURL) { [weak self] image in
             let avatar = image ?? Constants.defaultAvatar
             self?.avatar.value = avatar
         }
