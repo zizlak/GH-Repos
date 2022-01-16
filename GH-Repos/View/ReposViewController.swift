@@ -25,12 +25,13 @@ class ReposViewController: UIViewController {
         setupSearchController()
         setupTableView()
     }
-
+    
     
     //MARK: - Methods
     private func setupReposListViewModel() {
         reposListViewModel = ReposListViewModel(){ [unowned self] in
             self.tableView.reloadData()
+            self.tableView.scrollToTheTop()
         }
         reposListViewModel?.errorString.bind(listener: { [unowned self] in
             guard let error = $0 else { return }
@@ -41,15 +42,14 @@ class ReposViewController: UIViewController {
     
     private func setupViewController() {
         view.backgroundColor = Colors.backGround
-        title = Constants.repositories
+        title = Constants.repositoriesString
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
         view.addGestureRecognizer(tapGesture)
     }
     
     @objc func tapped() {
-        guard !tableView.visibleCells.isEmpty else { return }
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        tableView.scrollToTheTop()
     }
     
     private func setupSearchController() {
@@ -75,6 +75,7 @@ class ReposViewController: UIViewController {
 
 //MARK: - Extensions
 
+//MARK: - UITableViewDataSource
 extension ReposViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         reposListViewModel?.numberOfItems() ?? 0
@@ -87,6 +88,7 @@ extension ReposViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - Search
 extension ReposViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let keyword = searchController.searchBar.text

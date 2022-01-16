@@ -21,8 +21,9 @@ protocol ReposListViewModelProtocol {
     var errorString: Box<String?> { get }
 }
 
-class ReposListViewModel : ReposListViewModelProtocol {
 
+class ReposListViewModel : ReposListViewModelProtocol {
+    
     //MARK: - Properties
     typealias Listener = () -> ()
     
@@ -43,12 +44,14 @@ class ReposListViewModel : ReposListViewModelProtocol {
     //MARK: - Methods
     func fetchAllRepos() {
         DataFetcherService().fetchRepos() { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let repos):
-                self?.repos = repos
+                self.repos = repos
                 
             case .failure(let error):
-                self?.errorString.value = error.rawValue
+                self.errorString.value = error.rawValue
             }
         }
     }
@@ -61,13 +64,14 @@ class ReposListViewModel : ReposListViewModelProtocol {
         }
         
         DataFetcherService().fetchReposContaining(keyword) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let repos):
                 guard let items = repos.items else { return }
-                self?.repos = items
+                self.repos = items
                 
             case .failure(let error):
-                self?.errorString = Box(error.rawValue)
+                self.errorString = Box(error.rawValue)
             }
         }
     }

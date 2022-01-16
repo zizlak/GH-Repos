@@ -72,13 +72,13 @@ class NetworkingTest: XCTestCase {
                 XCTAssertNotNil(repos, "repos schouldn't be nil")
                 XCTAssertFalse(repos.isEmpty, "repos schould be not empty")
                 promise.fulfill()
-            
+                
             case .failure(let error):
                 XCTFail(error.rawValue)
             }
         }
         sut.fetchGenericJSONData(url: urlRepos, completion: completion)
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
     }
     
     
@@ -98,12 +98,12 @@ class NetworkingTest: XCTestCase {
                 XCTAssertNotNil(result.items, "repos schouldn't be nil")
                 XCTAssertTrue(result.items!.count > 10, "items schould be > 10")
                 promise.fulfill()
-            
+                
             case .failure(let error):
                 XCTFail(error.rawValue)
             }
         }
         sut.fetchGenericJSONData(url: url, completion: completion)
-        waitForExpectations(timeout: 1)
+        waitForExpectations(timeout: 2)
     }
 }

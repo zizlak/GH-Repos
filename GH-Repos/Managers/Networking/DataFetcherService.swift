@@ -12,7 +12,6 @@ class DataFetcherService {
     //MARK: - Dependency
     private var networkDataFetcher: ObjectsFetcherProtocol
     
-    
     //MARK: - Init
     init(networkDataFetcher: ObjectsFetcherProtocol = NetworkObjectsFetcher()) {
         self.networkDataFetcher = networkDataFetcher
@@ -27,7 +26,6 @@ class DataFetcherService {
         
         networkDataFetcher.fetchGenericJSONData(url: url, completion: completion)
     }
-    
     
     //MARK: - Repos by keyword
     func fetchReposContaining(_ keyword: String, completion: @escaping(Result<FilteredRepos, ReposError>) -> Void) {

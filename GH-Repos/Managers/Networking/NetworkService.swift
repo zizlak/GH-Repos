@@ -7,15 +7,16 @@
 
 import Foundation
 
-
+//MARK: - Protocol
 protocol NetworkServiceProtocol {
     func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void)
 }
 
+
 class NetworkService: NetworkServiceProtocol {
     
     //MARK: - Request
-    func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void) {        
+    func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void) {
         let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)
         task.resume()

@@ -1,5 +1,5 @@
 //
-//  TestImageFetcher.swift
+//  ImageFetcherTest.swift
 //  GH-ReposTests
 //
 //  Created by Aleksandr Kurdiukov on 15.01.22.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import GH_Repos
 
-class TestImageFetcher: XCTestCase {
+class ImageFetcherTest: XCTestCase {
     
     var avatarURLString: String!
     var sut: ImageFetcher!
@@ -16,7 +16,7 @@ class TestImageFetcher: XCTestCase {
     //MARK: - LifeCycle Methods
     override func setUp() {
         super.setUp()
-        sut = MockTestImageFetcher.shared
+        sut = MockImageFetcher.shared
         avatarURLString = "https://avatars.githubusercontent.com/u/128?v=4"
     }
     
@@ -45,9 +45,7 @@ class TestImageFetcher: XCTestCase {
         sut.fetchImageData(urlString: avatarURLString) { _ in
             promise.fulfill()
         }
-        waitForExpectations(timeout: 1) { [weak self] _ in
-            guard let self = self else { XCTFail("Self is nil"); return }
-            
+        waitForExpectations(timeout: 1) { [unowned self] _ in
             let object = self.sut.getImageFromCache(for: self.avatarURLString)
             XCTAssertNotNil(object, "Object from cache schould not be nil")
         }
@@ -55,7 +53,8 @@ class TestImageFetcher: XCTestCase {
 }
 
 
-extension TestImageFetcher {
-    class MockTestImageFetcher: ImageFetcher {
+//MARK: - MockObject
+extension ImageFetcherTest {
+    class MockImageFetcher: ImageFetcher {
     }
 }

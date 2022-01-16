@@ -18,8 +18,8 @@ class RepoCell: UITableViewCell {
     
     //MARK: - Properties
     static let reuseID = String(describing: RepoCell.self)
-    private let padding = Constants.standartPadding
-    private let imageSize = Constants.cellAvatarWidth
+    private let padding = Constants.Sizes.standartPadding
+    private let imageSize = Constants.Sizes.cellAvatarWidth
     
     var viewModel: RepoCellViewModelProtocol? {
         didSet { configureUI() }
@@ -42,7 +42,7 @@ class RepoCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        avatarView.image = Constants.defaultAvatar
+        avatarView.image = nil
     }
     
     
@@ -54,9 +54,8 @@ class RepoCell: UITableViewCell {
     private func setupAvatarView() {
         addSubview(avatarView)
         avatarView.translatesAutoresizingMaskIntoConstraints = false
-        avatarView.layer.cornerRadius = Constants.cellAvatarWidth / 4
+        avatarView.layer.cornerRadius = Constants.Sizes.cellAvatarWidth / 4
         avatarView.layer.masksToBounds = true
-        avatarView.image = Constants.defaultAvatar
         
         NSLayoutConstraint.activate([
             avatarView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: padding),

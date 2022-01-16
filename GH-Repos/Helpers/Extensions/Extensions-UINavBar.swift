@@ -5,7 +5,6 @@
 //  Created by Aleksandr Kurdiukov on 13.01.22.
 //
 
-
 import UIKit
 
 extension UINavigationBar {

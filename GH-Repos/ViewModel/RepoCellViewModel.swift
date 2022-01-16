@@ -17,7 +17,7 @@ protocol RepoCellViewModelProtocol: AnyObject {
 }
 
 class RepoCellViewModel: RepoCellViewModelProtocol {
-
+    
     //MARK: - Properties
     private let repoModel: RepoModel
     
@@ -42,12 +42,8 @@ class RepoCellViewModel: RepoCellViewModelProtocol {
     func fetchImage() {
         let imageURL = repoModel.owner?.avatarUrl
         ImageFetcher.shared.fetchImageData(urlString: imageURL) { [weak self] image in
-            guard let image = image else {
-                self?.avatar.value = Constants.defaultAvatar
-                return
-            }
-            self?.avatar.value = image
+            let avatar = image ?? Constants.defaultAvatar
+            self?.avatar.value = avatar
         }
     }
-
 }

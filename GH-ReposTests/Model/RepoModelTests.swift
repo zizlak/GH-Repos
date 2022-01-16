@@ -11,15 +11,6 @@ import XCTest
 
 class RepoModelTests: XCTestCase {
     
-    //MARK: - LifeCycle Methods
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     //MARK: - Init
     func testInitRepoModel() {
         
@@ -49,5 +40,4 @@ class RepoModelTests: XCTestCase {
         XCTAssert(sut.items?.count == 1, "items.count should be 1")
         XCTAssert(sut.items?[0].owner?.avatarUrl == "Baz", "avatarUrl should be Baz")
     }
-    
 }

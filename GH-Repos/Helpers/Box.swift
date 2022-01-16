@@ -11,6 +11,7 @@ class Box<T> {
     
     typealias BoxListener = (T) -> Void
     
+    //MARK: - Properties
     var value: T {
         didSet {
             listener?(value)
@@ -19,13 +20,14 @@ class Box<T> {
     
     private var listener: BoxListener?
     
-    func bind(listener: @escaping BoxListener) {
-        self.listener = listener
-        listener(value)
-    }
-    
+    //MARK: - Init
     init(_ value: T) {
         self.value = value
     }
     
+    //MARK: - Methods
+    func bind(listener: @escaping BoxListener) {
+        self.listener = listener
+        listener(value)
+    }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Protocol
 protocol ObjectsFetcherProtocol {
     func fetchGenericJSONData<T: Decodable>(url: URL, completion: @escaping(Result<T, ReposError>) -> Void)
 }
@@ -20,7 +21,6 @@ class NetworkObjectsFetcher: ObjectsFetcherProtocol {
     init(networkService: NetworkServiceProtocol = NetworkService()) {
         self.networkService = networkService
     }
-    
     
     //MARK: - fetchJSONData
     func fetchGenericJSONData<T: Decodable>(url: URL, completion: @escaping(Result<T, ReposError>) -> Void) {
@@ -40,7 +40,7 @@ class NetworkObjectsFetcher: ObjectsFetcherProtocol {
         }
     }
     
-    //MARK: - decodeJSON
+    //MARK: - Decode JSON
     private func decodeJSON<T: Decodable>(type: T.Type, from data: Data) -> T? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
