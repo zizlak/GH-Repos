@@ -10,6 +10,7 @@ import UIKit
 extension UIViewController {
     
     func popUp(message: String) {
+        // [df] poor varibale naming
         let ac = UIAlertController(title: "Something went wrong", message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .cancel)
         ac.addAction(ok)

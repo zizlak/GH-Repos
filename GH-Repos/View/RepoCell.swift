@@ -37,6 +37,7 @@ class RepoCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
+        // [df] what could be proper implementation?
         fatalError("init(coder:) has not been implemented")
     }
     

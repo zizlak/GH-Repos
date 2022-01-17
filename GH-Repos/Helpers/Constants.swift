@@ -7,8 +7,10 @@
 
 import UIKit
 
+// [df] shouldn't be global
 enum Constants {
-    
+
+    // [df] shouldn't contain such a different things
     static let defaultAvatar = UIImage(named: "defaultAvatar")
     static let repositoriesString = "Repositories"
     

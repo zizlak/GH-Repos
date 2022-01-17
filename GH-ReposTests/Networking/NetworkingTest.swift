@@ -33,6 +33,8 @@ class NetworkingTest: XCTestCase {
     func testNetworkServiceRequestDataNotNil() {
         let sut = NetworkRequestService()
         let promise = expectation(description: "Request Data")
+
+        // [df] what are drowbacks of using real requests?
         sut.request(url: urlRepos) { result in
             switch result {
             case .success(let data):

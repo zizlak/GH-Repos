@@ -7,6 +7,7 @@
 
 import Foundation
 
+// [df] comment on this abstraction
 class Box<T> {
     
     typealias BoxListener = (T) -> Void

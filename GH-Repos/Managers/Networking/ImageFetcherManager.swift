@@ -21,7 +21,7 @@ class ImageFetcherManager {
     
     //MARK: - Methods
     func fetchImageData(urlString: String?, completion: @escaping(UIImage?) -> Void) {
-        
+        // [df] why `urlString` is optional string?
         guard let urlString = urlString else {
             completion(nil)
             return
@@ -33,7 +33,8 @@ class ImageFetcherManager {
         }
         requestImageFrom(urlString, completion: completion)
     }
-    
+
+    // [df] move `from` to signature
     private func requestImageFrom(_ urlString: String, completion: @escaping(UIImage?) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(nil)
