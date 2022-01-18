@@ -7,7 +7,7 @@
 
 import XCTest
 
-class GH_ReposUITestsLaunchTests: XCTestCase {
+class GHReposUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

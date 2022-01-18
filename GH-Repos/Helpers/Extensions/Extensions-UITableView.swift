@@ -8,7 +8,7 @@
 import UIKit
 
 extension UITableView {
-    
+
     func scrollToTheTop() {
         guard !self.visibleCells.isEmpty else { return }
         self.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
