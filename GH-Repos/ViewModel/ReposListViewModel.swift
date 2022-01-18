@@ -42,6 +42,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
     }
 
     // MARK: - Methods
+    func fetchAllRepos() {
         // [df] ObjectsFetcherManager should be a dependency
         ObjectsFetcherManager().fetchRepos { [weak self] result in
             guard let self = self else { return }
