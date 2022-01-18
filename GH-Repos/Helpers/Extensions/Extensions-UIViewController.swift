@@ -8,13 +8,14 @@
 import UIKit
 
 extension UIViewController {
-    
+
     func popUp(message: String) {
-        let ac = UIAlertController(title: "Something went wrong", message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .cancel)
-        ac.addAction(ok)
-        ac.view.tintColor = Colors.tint
-        
-        self.present(ac, animated: true)
+        let allertController = UIAlertController(title: "Something went wrong",
+                                                 message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        allertController.addAction(okAction)
+        allertController.view.tintColor = Colors.tint
+
+        self.present(allertController, animated: true)
     }
 }

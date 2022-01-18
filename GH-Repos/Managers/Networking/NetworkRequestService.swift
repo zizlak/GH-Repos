@@ -7,24 +7,24 @@
 
 import Foundation
 
-//MARK: - Protocol
+// MARK: - Protocol
 protocol NetworkRequestServiceProtocol {
     func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void)
 }
 
-
 class NetworkRequestService: NetworkRequestServiceProtocol {
-    
-    //MARK: - Request
+
+    // MARK: - Request
     func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void) {
         let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)
         task.resume()
     }
-    
-    //MARK: - DataTask
-    private func createDataTask(from request: URLRequest, completion: @escaping(Result<Data, ReposError>) -> Void) -> URLSessionDataTask {
-        
+
+    // MARK: - DataTask
+    private func createDataTask(from request: URLRequest,
+                                completion: @escaping(Result<Data, ReposError>) -> Void) -> URLSessionDataTask {
+
         return URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard error == nil else {

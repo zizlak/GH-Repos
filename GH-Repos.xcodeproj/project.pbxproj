@@ -16,8 +16,8 @@
 		A03E8AD1278EE452008E34C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03E8AD0278EE452008E34C2 /* Assets.xcassets */; };
 		A03E8AD4278EE452008E34C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03E8AD2278EE452008E34C2 /* LaunchScreen.storyboard */; };
 		A03E8ADF278EE452008E34C2 /* RepoCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8ADE278EE452008E34C2 /* RepoCellViewModelTests.swift */; };
-		A03E8AE9278EE452008E34C2 /* GH_ReposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AE8278EE452008E34C2 /* GH_ReposUITests.swift */; };
-		A03E8AEB278EE452008E34C2 /* GH_ReposUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AEA278EE452008E34C2 /* GH_ReposUITestsLaunchTests.swift */; };
+		A03E8AE9278EE452008E34C2 /* GHReposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AE8278EE452008E34C2 /* GHReposUITests.swift */; };
+		A03E8AEB278EE452008E34C2 /* GHReposUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AEA278EE452008E34C2 /* GHReposUITestsLaunchTests.swift */; };
 		A03E8AF8278EE5F3008E34C2 /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AF7278EE5F3008E34C2 /* NetworkRequestService.swift */; };
 		A03E8AF9278EE5F3008E34C2 /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AF7278EE5F3008E34C2 /* NetworkRequestService.swift */; };
 		A03E8AFA278EE5F3008E34C2 /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AF7278EE5F3008E34C2 /* NetworkRequestService.swift */; };
@@ -108,8 +108,8 @@
 		A03E8ADA278EE452008E34C2 /* GH-ReposTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GH-ReposTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03E8ADE278EE452008E34C2 /* RepoCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellViewModelTests.swift; sourceTree = "<group>"; };
 		A03E8AE4278EE452008E34C2 /* GH-ReposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GH-ReposUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A03E8AE8278EE452008E34C2 /* GH_ReposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GH_ReposUITests.swift; sourceTree = "<group>"; };
-		A03E8AEA278EE452008E34C2 /* GH_ReposUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GH_ReposUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A03E8AE8278EE452008E34C2 /* GHReposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHReposUITests.swift; sourceTree = "<group>"; };
+		A03E8AEA278EE452008E34C2 /* GHReposUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHReposUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A03E8AF7278EE5F3008E34C2 /* NetworkRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestService.swift; sourceTree = "<group>"; };
 		A03E8AFD278EE6E9008E34C2 /* ReposError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposError.swift; sourceTree = "<group>"; };
 		A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObjectsFetcher.swift; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 		A03E8AE7278EE452008E34C2 /* GH-ReposUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A03E8AE8278EE452008E34C2 /* GH_ReposUITests.swift */,
-				A03E8AEA278EE452008E34C2 /* GH_ReposUITestsLaunchTests.swift */,
+				A03E8AE8278EE452008E34C2 /* GHReposUITests.swift */,
+				A03E8AEA278EE452008E34C2 /* GHReposUITestsLaunchTests.swift */,
 			);
 			path = "GH-ReposUITests";
 			sourceTree = "<group>";
@@ -328,6 +328,7 @@
 				A03E8AC0278EE450008E34C2 /* Sources */,
 				A03E8AC1278EE450008E34C2 /* Frameworks */,
 				A03E8AC2278EE450008E34C2 /* Resources */,
+				A0219D022796A6FC00CA0563 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -443,6 +444,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A0219D022796A6FC00CA0563 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A03E8AC0278EE450008E34C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -510,7 +531,7 @@
 			files = (
 				A07C2514278F0A2500EDEEEA /* AppDelegate.swift in Sources */,
 				A07C252D2790144E00EDEEEA /* Extensions-UINavBar.swift in Sources */,
-				A03E8AEB278EE452008E34C2 /* GH_ReposUITestsLaunchTests.swift in Sources */,
+				A03E8AEB278EE452008E34C2 /* GHReposUITestsLaunchTests.swift in Sources */,
 				A07C253B2791D7FD00EDEEEA /* ReposViewController.swift in Sources */,
 				A07C2510278F0A1B00EDEEEA /* Colors.swift in Sources */,
 				A03E8B15278EF614008E34C2 /* RepoModel.swift in Sources */,
@@ -523,7 +544,7 @@
 				A03E8B00278EE6E9008E34C2 /* ReposError.swift in Sources */,
 				A07C25242790035500EDEEEA /* ReposListViewModel.swift in Sources */,
 				A07C2512278F0A1E00EDEEEA /* Extensions-UIView.swift in Sources */,
-				A03E8AE9278EE452008E34C2 /* GH_ReposUITests.swift in Sources */,
+				A03E8AE9278EE452008E34C2 /* GHReposUITests.swift in Sources */,
 				A03E8B04278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */,
 				A0187949279485EB0084488E /* Extensions-UITableView.swift in Sources */,
 				A07C2520278F0E8200EDEEEA /* Constants.swift in Sources */,

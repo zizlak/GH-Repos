@@ -8,28 +8,27 @@
 import UIKit
 
 class ReposViewController: UIViewController {
-    
-    //MARK: - Interface
+
+    // MARK: - Interface
     private let tableView = UITableView()
-    
-    //MARK: - Properties
+
+    // MARK: - Properties
     var reposListViewModel: ReposListViewModelProtocol?
-    
-    //MARK: - LifeCycle Methods
-    
+
+    // MARK: - LifeCycle Methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupReposListViewModel()
         setupViewController()
         setupSearchController()
         setupTableView()
     }
-    
-    
-    //MARK: - Methods
+
+    // MARK: - Methods
     private func setupReposListViewModel() {
-        reposListViewModel = ReposListViewModel(){ [unowned self] in
+        reposListViewModel = ReposListViewModel { [unowned self] in
             self.tableView.reloadData()
             self.tableView.scrollToTheTop()
         }
@@ -39,48 +38,47 @@ class ReposViewController: UIViewController {
         })
         reposListViewModel?.fetchAllRepos()
     }
-    
+
     private func setupViewController() {
         view.backgroundColor = Colors.backGround
         title = Constants.repositoriesString
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
         view.addGestureRecognizer(tapGesture)
     }
-    
+
     @objc func tapped() {
         tableView.scrollToTheTop()
     }
-    
+
     private func setupSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search repositories"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.searchTextField.delegate = self
-        
+
         navigationItem.searchController = searchController
     }
-    
+
     private func setupTableView() {
         tableView.backgroundColor = Colors.backGround
         tableView.pin(to: view, with: 5)
-        
+
         tableView.register(RepoCell.self, forCellReuseIdentifier: RepoCell.reuseID)
         tableView.dataSource = self
         tableView.allowsSelection = false
     }
 }
 
+// MARK: - Extensions
 
-//MARK: - Extensions
-
-//MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension ReposViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         reposListViewModel?.numberOfItems() ?? 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RepoCell.reuseID) as? RepoCell
         cell?.viewModel = reposListViewModel?.repoCellViewModel(forIndexPath: indexPath)
@@ -88,8 +86,8 @@ extension ReposViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - Search
-extension ReposViewController : UISearchResultsUpdating {
+// MARK: - Search
+extension ReposViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let keyword = searchController.searchBar.text
         reposListViewModel?.searchTextDidChangeTo(keyword)

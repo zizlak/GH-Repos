@@ -9,25 +9,24 @@ import XCTest
 @testable import GH_Repos
 
 class ImageFetcherManagerTest: XCTestCase {
-    
+
     var avatarURLString: String!
     var sut: ImageFetcherManager!
-    
-    //MARK: - LifeCycle Methods
+
+    // MARK: - LifeCycle Methods
     override func setUp() {
         super.setUp()
         sut = MockImageFetcher.shared
         avatarURLString = "https://avatars.githubusercontent.com/u/128?v=4"
     }
-    
+
     override func tearDown() {
         avatarURLString = nil
         sut = nil
         super.tearDown()
     }
-    
-    
-    //MARK: - Tests
+
+    // MARK: - Tests
     func testImageNotNil() {
         let promise = expectation(description: "Fetch Image")
         var image: UIImage?
@@ -39,7 +38,7 @@ class ImageFetcherManagerTest: XCTestCase {
             XCTAssertNotNil(image, "Returned image schould not be nil")
         }
     }
-    
+
     func testImageSavedToCache() {
         let promise = expectation(description: "Fetch Image")
         sut.fetchImageData(urlString: avatarURLString) { _ in
@@ -52,8 +51,7 @@ class ImageFetcherManagerTest: XCTestCase {
     }
 }
 
-
-//MARK: - MockObject
+// MARK: - MockObject
 extension ImageFetcherManagerTest {
     class MockImageFetcher: ImageFetcherManager {
     }

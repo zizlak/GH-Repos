@@ -8,24 +8,24 @@
 import Foundation
 
 class Box<T> {
-    
+
     typealias BoxListener = (T) -> Void
-    
-    //MARK: - Properties
+
+    // MARK: - Properties
     var value: T {
         didSet {
             listener?(value)
         }
     }
-    
+
     private var listener: BoxListener?
-    
-    //MARK: - Init
+
+    // MARK: - Init
     init(_ value: T) {
         self.value = value
     }
-    
-    //MARK: - Methods
+
+    // MARK: - Methods
     func bind(listener: @escaping BoxListener) {
         self.listener = listener
         listener(value)

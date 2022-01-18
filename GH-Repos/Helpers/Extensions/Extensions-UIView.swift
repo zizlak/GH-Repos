@@ -7,13 +7,13 @@
 
 import UIKit
 
-//MARK: - UIView
+// MARK: - UIView
 extension UIView {
-    
+
     func pin(to parentView: UIView, with padding: CGFloat = 0) {
         self.translatesAutoresizingMaskIntoConstraints = false
         parentView.addSubview(self)
-        
+
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(
                 equalTo: parentView.safeAreaLayoutGuide.topAnchor, constant: padding),
