@@ -1,0 +1,6 @@
+framework module Pods_GH_ReposTests {
+  umbrella header "Pods-GH-ReposTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_GH_Repos {
+  umbrella header "Pods-GH-Repos-umbrella.h"
+
+  export *
+  module * { export * }
+}
