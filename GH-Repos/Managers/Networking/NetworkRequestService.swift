@@ -10,13 +10,13 @@ import Foundation
 // MARK: - Protocol
 protocol NetworkRequestServiceProtocol {
     // [df] `NetworkRequestService` is very general whereas it contains `ReposError` which related to repo
-    func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void)
+    func request(url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void)
 }
 
 class NetworkRequestService: NetworkRequestServiceProtocol {
 
     // MARK: - Request
-    func request(url: URL, completion: @escaping(Result<Data, ReposError>) -> Void) {
+    func request(url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
         let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)
         task.resume()
@@ -24,7 +24,7 @@ class NetworkRequestService: NetworkRequestServiceProtocol {
 
     // MARK: - DataTask
     private func createDataTask(from request: URLRequest,
-                                completion: @escaping(Result<Data, ReposError>) -> Void) -> URLSessionDataTask {
+                                completion: @escaping(Result<Data, NetworkError>) -> Void) -> URLSessionDataTask {
         // [df] how we can get more control on `URLSession`: setup it and have multiple sessions?
         return URLSession.shared.dataTask(with: request) { data, response, error in
             // [df] why switch to main?

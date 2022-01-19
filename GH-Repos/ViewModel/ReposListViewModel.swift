@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Protocol
 protocol ReposListViewModelProtocol {
     // [df] init in protocol
-    init(listener: (() -> Void)?)
+//    init(listener: (() -> Void)?)
 
     func numberOfItems() -> Int
     func repoCellViewModel(forIndexPath indexPath: IndexPath) -> RepoCellViewModelProtocol?
@@ -35,6 +35,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
         }
     }
     var errorString: Box<String?> = Box(nil)
+    let objectsFetcherManager: ObjectsFetcherManagerProtocol = ObjectsFetcherManager()
 
     // MARK: - Init
     required init(listener: Listener?) {
@@ -44,7 +45,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
     // MARK: - Methods
     func fetchAllRepos() {
         // [df] ObjectsFetcherManager should be a dependency
-        ObjectsFetcherManager().fetchRepos { [weak self] result in
+        objectsFetcherManager.fetchRepos { [weak self] result in
             guard let self = self else { return }
 
             switch result {
@@ -66,7 +67,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
         }
 
         // [df] code looks quite similar to `fetchAllRepos`
-        ObjectsFetcherManager().fetchReposContaining(keyword) { [weak self] result in
+        objectsFetcherManager.fetchReposContaining(keyword) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let repos):
@@ -75,7 +76,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
 
             case .failure(let error):
                 // [df] box
-                self.errorString = Box(error.rawValue)
+                self.errorString.value = error.rawValue
             }
         }
     }

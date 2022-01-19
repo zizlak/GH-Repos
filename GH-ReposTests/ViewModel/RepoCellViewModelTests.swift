@@ -13,7 +13,7 @@ class RepoCellViewModelTests: XCTestCase {
 
     // MARK: - Name
     func testRepoCellViewModelNameExists() {
-        let repoModel = RepoModel(fullName: "Bar/Baz")
+        guard let repoModel = RepoModel(fullName: "Bar/Baz") else { return }
         let sut: RepoCellViewModelProtocol = RepoCellViewModel(repoModel: repoModel)
 
         XCTAssert(sut.name == "Bar Baz", "name schould be == Bar Baz")
@@ -21,7 +21,7 @@ class RepoCellViewModelTests: XCTestCase {
 
     // MARK: - Description
     func testRepoCellViewModelDescriptionExists() {
-        let repoModel = RepoModel(description: "Foo")
+        guard let repoModel = RepoModel(description: "Foo") else { return }
         let sut: RepoCellViewModelProtocol = RepoCellViewModel(repoModel: repoModel)
 
         XCTAssert(sut.description == "Foo", "name schould be = Foo")
@@ -29,13 +29,16 @@ class RepoCellViewModelTests: XCTestCase {
 
     // MARK: - Default Values
     func testRepoCellViewModelParametersAreDefaults() {
-        let repoModel = RepoModel()
+
+        enum Strings {
+            static let noName = "No Name"
+            static let noDescription = "No Description"
+        }
+
+        guard let repoModel = RepoModel() else { return }
         let sut: RepoCellViewModelProtocol = RepoCellViewModel(repoModel: repoModel)
 
-        let name = Constants.RepoCell.noName
-        let description = Constants.RepoCell.noDescription
-
-        XCTAssert(sut.description == description, "name schould be = \(description)")
-        XCTAssert(sut.name == name, "name schould be = \(name)")
+        XCTAssert(sut.description == Strings.noDescription, "name schould be = \(Strings.noDescription)")
+        XCTAssert(sut.name == Strings.noName, "name schould be = \(Strings.noName)")
     }
 }

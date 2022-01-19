@@ -29,11 +29,11 @@ class ImageFetcherManager {
             completion(image)
             return
         }
-        requestImageFrom(urlString, completion: completion)
+        requestImage(from: urlString, completion: completion)
     }
 
     // [df] move `from` to signature
-    private func requestImageFrom(_ urlString: String, completion: @escaping(UIImage?) -> Void) {
+    private func requestImage(from urlString: String, completion: @escaping(UIImage?) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(nil)
             return

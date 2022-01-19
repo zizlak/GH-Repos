@@ -11,9 +11,15 @@ extension UIViewController {
 
     func popUp(message: String) {
         // [df] where to store strings?
-        let allertController = UIAlertController(title: "Something went wrong",
+
+        enum ErrorStrings {
+            static let errorTitle = "Something went wrong"
+            static let okString = "OK"
+        }
+
+        let allertController = UIAlertController(title: ErrorStrings.errorTitle,
                                                  message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        let okAction = UIAlertAction(title: ErrorStrings.okString, style: .cancel)
         allertController.addAction(okAction)
         allertController.view.tintColor = Colors.tint
 

@@ -15,6 +15,7 @@ class RepoModelTests: XCTestCase {
     func testInitRepoModel() {
 
         let sut = RepoModel(fullName: "Foo", description: "Bar")
+        guard let sut = sut else { XCTFail("RepoModel is nil"); return }
 
         XCTAssert(sut.fullName == "Foo", "fullName schould be Foo")
         XCTAssert(sut.description == "Bar", "description schould be Bar")
@@ -25,15 +26,28 @@ class RepoModelTests: XCTestCase {
 
         let sut = RepoModel()
 
-        XCTAssertNil(sut.fullName, "fullName schould be nil")
-        XCTAssertNil(sut.description, "description schould be nil")
-        XCTAssertNil(sut.owner?.avatarUrl, "avatarUrl should be nil")
+        XCTAssert(sut == nil, "RepoModel should be nil")
+        XCTAssertNil(sut?.fullName, "fullName schould be nil")
+        XCTAssertNil(sut?.description, "description schould be nil")
+        XCTAssertNil(sut?.owner?.avatarUrl, "avatarUrl should be nil")
+    }
+
+    func testInitRepoModelToNilValuesMemberwiseInit() {
+
+        let sut = RepoModel(fullName: nil, description: nil, owner: nil)
+
+        XCTAssert(sut == nil, "RepoModel should be nil")
+        XCTAssertNil(sut?.fullName, "fullName schould be nil")
+        XCTAssertNil(sut?.description, "description schould be nil")
+        XCTAssertNil(sut?.owner?.avatarUrl, "avatarUrl should be nil")
     }
 
     // MARK: - FilteredRepos
     func testFilteredRepos() {
 
-        let repoModel = RepoModel(owner: Owner(avatarUrl: "Baz"))
+        guard let repoModel = RepoModel(owner: Owner(avatarUrl: "Baz")) else {
+            XCTFail("RepoModel is nil"); return }
+
         let sut = FilteredRepos(items: [repoModel])
 
         XCTAssert(sut.items?.count == 1, "items.count should be 1")

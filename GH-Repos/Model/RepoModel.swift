@@ -13,6 +13,18 @@ struct RepoModel: Decodable {
     var fullName: String?
     var description: String?
     var owner: Owner?
+
+    init?(fullName: String? = nil, description: String? = nil, owner: Owner? = nil) {
+        guard fullName != nil || description != nil || owner != nil else { return nil }
+
+        self.fullName = fullName
+        self.description = description
+        self.owner = owner
+    }
+
+    init?() {
+        return nil
+    }
 }
 
 struct Owner: Decodable {

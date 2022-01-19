@@ -15,10 +15,17 @@ class RepoCell: UITableViewCell {
     let nameLabel = UILabel()
     let descriptionLabel = UILabel()
 
+    // MARK: - Constants
+
+    struct Sizes {
+        static let cellAvatarWidth: CGFloat = 60
+        static let standartPadding: CGFloat = 5
+    }
+
     // MARK: - Properties
     static let reuseID = String(describing: RepoCell.self)
-    private let padding = Constants.Sizes.standartPadding
-    private let imageSize = Constants.Sizes.cellAvatarWidth
+    private let padding = Sizes.standartPadding
+    private let imageSize = Sizes.cellAvatarWidth
 
     var viewModel: RepoCellViewModelProtocol? {
         didSet { configureUI() }
@@ -36,7 +43,7 @@ class RepoCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         // [df] what could be proper implementation?
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
 
     override func prepareForReuse() {
@@ -52,7 +59,7 @@ class RepoCell: UITableViewCell {
     private func setupAvatarView() {
         addSubview(avatarView)
         avatarView.translatesAutoresizingMaskIntoConstraints = false
-        avatarView.layer.cornerRadius = Constants.Sizes.cellAvatarWidth / 4
+        avatarView.layer.cornerRadius = Sizes.cellAvatarWidth / 4
         avatarView.layer.masksToBounds = true
 
         NSLayoutConstraint.activate([

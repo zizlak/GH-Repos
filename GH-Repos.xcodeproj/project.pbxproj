@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0F42E348F2233DFF757953 /* Pods_GH_ReposTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03498445C87763835D082835 /* Pods_GH_ReposTests.framework */; };
+		410E06A15EB1726A8B66119B /* Pods_GH_Repos_GH_ReposUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13CC441F42C9D0992A729FF /* Pods_GH_Repos_GH_ReposUITests.framework */; };
+		67429D9E6A24943842AA0D1A /* Pods_GH_Repos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319252FC1BC9311A2626AA0F /* Pods_GH_Repos.framework */; };
 		A0187947279483ED0084488E /* Extensions-UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0187946279483ED0084488E /* Extensions-UITableView.swift */; };
 		A0187948279485CA0084488E /* Extensions-UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0187946279483ED0084488E /* Extensions-UITableView.swift */; };
 		A0187949279485EB0084488E /* Extensions-UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0187946279483ED0084488E /* Extensions-UITableView.swift */; };
@@ -21,9 +24,9 @@
 		A03E8AF8278EE5F3008E34C2 /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AF7278EE5F3008E34C2 /* NetworkRequestService.swift */; };
 		A03E8AF9278EE5F3008E34C2 /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AF7278EE5F3008E34C2 /* NetworkRequestService.swift */; };
 		A03E8AFA278EE5F3008E34C2 /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AF7278EE5F3008E34C2 /* NetworkRequestService.swift */; };
-		A03E8AFE278EE6E9008E34C2 /* ReposError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* ReposError.swift */; };
-		A03E8AFF278EE6E9008E34C2 /* ReposError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* ReposError.swift */; };
-		A03E8B00278EE6E9008E34C2 /* ReposError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* ReposError.swift */; };
+		A03E8AFE278EE6E9008E34C2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* NetworkError.swift */; };
+		A03E8AFF278EE6E9008E34C2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* NetworkError.swift */; };
+		A03E8B00278EE6E9008E34C2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8AFD278EE6E9008E34C2 /* NetworkError.swift */; };
 		A03E8B02278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */; };
 		A03E8B03278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */; };
 		A03E8B04278EEA8D008E34C2 /* NetworkObjectsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */; };
@@ -97,6 +100,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03498445C87763835D082835 /* Pods_GH_ReposTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_ReposTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		319252FC1BC9311A2626AA0F /* Pods_GH_Repos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_Repos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F20CE60671F09223E1E9C2F /* Pods-GH-Repos-GH-ReposUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH-Repos-GH-ReposUITests.release.xcconfig"; path = "Target Support Files/Pods-GH-Repos-GH-ReposUITests/Pods-GH-Repos-GH-ReposUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4C68AF3C82082DAD578ED358 /* Pods-GH-Repos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH-Repos.release.xcconfig"; path = "Target Support Files/Pods-GH-Repos/Pods-GH-Repos.release.xcconfig"; sourceTree = "<group>"; };
 		A0187946279483ED0084488E /* Extensions-UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions-UITableView.swift"; sourceTree = "<group>"; };
 		A03E8AC4278EE450008E34C2 /* GH-Repos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GH-Repos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03E8AC7278EE450008E34C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +118,7 @@
 		A03E8AE8278EE452008E34C2 /* GHReposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHReposUITests.swift; sourceTree = "<group>"; };
 		A03E8AEA278EE452008E34C2 /* GHReposUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHReposUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A03E8AF7278EE5F3008E34C2 /* NetworkRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestService.swift; sourceTree = "<group>"; };
-		A03E8AFD278EE6E9008E34C2 /* ReposError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposError.swift; sourceTree = "<group>"; };
+		A03E8AFD278EE6E9008E34C2 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A03E8B01278EEA8D008E34C2 /* NetworkObjectsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObjectsFetcher.swift; sourceTree = "<group>"; };
 		A03E8B05278EEE2D008E34C2 /* ObjectsFetcherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsFetcherManager.swift; sourceTree = "<group>"; };
 		A03E8B09278EF0A4008E34C2 /* URLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLModel.swift; sourceTree = "<group>"; };
@@ -131,6 +138,11 @@
 		A07C254527932F9100EDEEEA /* URLModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLModelTest.swift; sourceTree = "<group>"; };
 		A07C2547279330B100EDEEEA /* ImageFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherTest.swift; sourceTree = "<group>"; };
 		A07C2549279341B500EDEEEA /* ReposListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListViewModelTest.swift; sourceTree = "<group>"; };
+		ACAC798B8DBDF0EBCBD3E414 /* Pods-GH-Repos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH-Repos.debug.xcconfig"; path = "Target Support Files/Pods-GH-Repos/Pods-GH-Repos.debug.xcconfig"; sourceTree = "<group>"; };
+		ACBB20FA91CCA7EF1D5B1BB9 /* Pods-GH-ReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH-ReposTests.release.xcconfig"; path = "Target Support Files/Pods-GH-ReposTests/Pods-GH-ReposTests.release.xcconfig"; sourceTree = "<group>"; };
+		DA385DE79A7140A6DE8A0F06 /* Pods-GH-Repos-GH-ReposUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH-Repos-GH-ReposUITests.debug.xcconfig"; path = "Target Support Files/Pods-GH-Repos-GH-ReposUITests/Pods-GH-Repos-GH-ReposUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F13CC441F42C9D0992A729FF /* Pods_GH_Repos_GH_ReposUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH_Repos_GH_ReposUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCC4D9BEA4A3BFD146009A60 /* Pods-GH-ReposTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH-ReposTests.debug.xcconfig"; path = "Target Support Files/Pods-GH-ReposTests/Pods-GH-ReposTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67429D9E6A24943842AA0D1A /* Pods_GH_Repos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0F42E348F2233DFF757953 /* Pods_GH_ReposTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,12 +166,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				410E06A15EB1726A8B66119B /* Pods_GH_Repos_GH_ReposUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0099BD77F34B25C3B77858A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				319252FC1BC9311A2626AA0F /* Pods_GH_Repos.framework */,
+				F13CC441F42C9D0992A729FF /* Pods_GH_Repos_GH_ReposUITests.framework */,
+				03498445C87763835D082835 /* Pods_GH_ReposTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0629E98D91B257D55EB2B845 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ACAC798B8DBDF0EBCBD3E414 /* Pods-GH-Repos.debug.xcconfig */,
+				4C68AF3C82082DAD578ED358 /* Pods-GH-Repos.release.xcconfig */,
+				DA385DE79A7140A6DE8A0F06 /* Pods-GH-Repos-GH-ReposUITests.debug.xcconfig */,
+				3F20CE60671F09223E1E9C2F /* Pods-GH-Repos-GH-ReposUITests.release.xcconfig */,
+				FCC4D9BEA4A3BFD146009A60 /* Pods-GH-ReposTests.debug.xcconfig */,
+				ACBB20FA91CCA7EF1D5B1BB9 /* Pods-GH-ReposTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A03E8ABB278EE450008E34C2 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +203,8 @@
 				A03E8ADD278EE452008E34C2 /* GH-ReposTests */,
 				A03E8AE7278EE452008E34C2 /* GH-ReposUITests */,
 				A03E8AC5278EE450008E34C2 /* Products */,
+				0629E98D91B257D55EB2B845 /* Pods */,
+				0099BD77F34B25C3B77858A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,7 +261,7 @@
 		A03E8AFC278EE6C1008E34C2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A03E8AFD278EE6E9008E34C2 /* ReposError.swift */,
+				A03E8AFD278EE6E9008E34C2 /* NetworkError.swift */,
 				A07C252E279026E300EDEEEA /* Box.swift */,
 				A07C25292790142300EDEEEA /* Extensions */,
 				A07C250D278F0A1200EDEEEA /* Colors.swift */,
@@ -325,6 +365,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A03E8AEE278EE452008E34C2 /* Build configuration list for PBXNativeTarget "GH-Repos" */;
 			buildPhases = (
+				A8757AFECEFA5E3EBCD5456F /* [CP] Check Pods Manifest.lock */,
 				A03E8AC0278EE450008E34C2 /* Sources */,
 				A03E8AC1278EE450008E34C2 /* Frameworks */,
 				A03E8AC2278EE450008E34C2 /* Resources */,
@@ -343,6 +384,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A03E8AF1278EE452008E34C2 /* Build configuration list for PBXNativeTarget "GH-ReposTests" */;
 			buildPhases = (
+				D91786AEE268B9290384A3CC /* [CP] Check Pods Manifest.lock */,
 				A03E8AD6278EE452008E34C2 /* Sources */,
 				A03E8AD7278EE452008E34C2 /* Frameworks */,
 				A03E8AD8278EE452008E34C2 /* Resources */,
@@ -361,6 +403,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A03E8AF4278EE452008E34C2 /* Build configuration list for PBXNativeTarget "GH-ReposUITests" */;
 			buildPhases = (
+				3EF2FA4449611CD5B0F847FF /* [CP] Check Pods Manifest.lock */,
 				A03E8AE0278EE452008E34C2 /* Sources */,
 				A03E8AE1278EE452008E34C2 /* Frameworks */,
 				A03E8AE2278EE452008E34C2 /* Resources */,
@@ -445,6 +488,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3EF2FA4449611CD5B0F847FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GH-Repos-GH-ReposUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A0219D022796A6FC00CA0563 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,7 +525,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  swiftlint\n  # swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+		A8757AFECEFA5E3EBCD5456F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GH-Repos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D91786AEE268B9290384A3CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GH-ReposTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -477,7 +586,7 @@
 				A03E8ACC278EE450008E34C2 /* ReposViewController.swift in Sources */,
 				A07C25372790B45000EDEEEA /* ImageFetcherManager.swift in Sources */,
 				A03E8AC8278EE450008E34C2 /* AppDelegate.swift in Sources */,
-				A03E8AFE278EE6E9008E34C2 /* ReposError.swift in Sources */,
+				A03E8AFE278EE6E9008E34C2 /* NetworkError.swift in Sources */,
 				A03E8B13278EF614008E34C2 /* RepoModel.swift in Sources */,
 				A07C251E278F0E8200EDEEEA /* Constants.swift in Sources */,
 				A07C252B2790144E00EDEEEA /* Extensions-UINavBar.swift in Sources */,
@@ -519,7 +628,7 @@
 				A07C25402792BE3900EDEEEA /* RepoModelTests.swift in Sources */,
 				A07C25442792D00E00EDEEEA /* NetworkingTest.swift in Sources */,
 				A07C2513278F0A2500EDEEEA /* AppDelegate.swift in Sources */,
-				A03E8AFF278EE6E9008E34C2 /* ReposError.swift in Sources */,
+				A03E8AFF278EE6E9008E34C2 /* NetworkError.swift in Sources */,
 				A07C253427908A7200EDEEEA /* Extensions-UIViewController.swift in Sources */,
 				A07C251B278F0D5700EDEEEA /* RepoCell.swift in Sources */,
 			);
@@ -541,7 +650,7 @@
 				A03E8B0C278EF0A4008E34C2 /* URLModel.swift in Sources */,
 				A07C25392790B45000EDEEEA /* ImageFetcherManager.swift in Sources */,
 				A07C2531279026E300EDEEEA /* Box.swift in Sources */,
-				A03E8B00278EE6E9008E34C2 /* ReposError.swift in Sources */,
+				A03E8B00278EE6E9008E34C2 /* NetworkError.swift in Sources */,
 				A07C25242790035500EDEEEA /* ReposListViewModel.swift in Sources */,
 				A07C2512278F0A1E00EDEEEA /* Extensions-UIView.swift in Sources */,
 				A03E8AE9278EE452008E34C2 /* GHReposUITests.swift in Sources */,
@@ -699,6 +808,7 @@
 		};
 		A03E8AEF278EE452008E34C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACAC798B8DBDF0EBCBD3E414 /* Pods-GH-Repos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -726,6 +836,7 @@
 		};
 		A03E8AF0278EE452008E34C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C68AF3C82082DAD578ED358 /* Pods-GH-Repos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -753,6 +864,7 @@
 		};
 		A03E8AF2278EE452008E34C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC4D9BEA4A3BFD146009A60 /* Pods-GH-ReposTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -773,6 +885,7 @@
 		};
 		A03E8AF3278EE452008E34C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACBB20FA91CCA7EF1D5B1BB9 /* Pods-GH-ReposTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -793,6 +906,7 @@
 		};
 		A03E8AF5278EE452008E34C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA385DE79A7140A6DE8A0F06 /* Pods-GH-Repos-GH-ReposUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -811,6 +925,7 @@
 		};
 		A03E8AF6278EE452008E34C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F20CE60671F09223E1E9C2F /* Pods-GH-Repos-GH-ReposUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

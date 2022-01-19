@@ -68,7 +68,7 @@ class NetworkingTest: XCTestCase {
         let sut = NetworkObjectsFetcher()
         let promise = expectation(description: "Fetching RepoModel JSON Data")
 
-        let completion: (Result<[RepoModel], ReposError>) -> Void = { result in
+        let completion: (Result<[RepoModel], NetworkError>) -> Void = { result in
             switch result {
             case .success(let repos):
                 XCTAssertNotNil(repos, "repos schouldn't be nil")
@@ -93,7 +93,7 @@ class NetworkingTest: XCTestCase {
             return
         }
 
-        let completion: (Result<FilteredRepos, ReposError>) -> Void = { result in
+        let completion: (Result<FilteredRepos, NetworkError>) -> Void = { result in
             switch result {
             case .success(let result):
                 XCTAssertNotNil(result.items, "repos schouldn't be nil")

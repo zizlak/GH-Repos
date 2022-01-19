@@ -15,6 +15,14 @@ class ReposViewController: UIViewController {
     // MARK: - Properties
     var reposListViewModel: ReposListViewModelProtocol?
 
+    // MARK: - Constants
+    private enum Sizes {
+        static let padding: CGFloat = 5
+    }
+    private enum Strings {
+        static let repositoriesString = "Repositories"
+    }
+
     // MARK: - LifeCycle Methods
 
     override func viewDidLoad() {
@@ -43,7 +51,7 @@ class ReposViewController: UIViewController {
 
     private func setupViewController() {
         view.backgroundColor = Colors.backGround
-        title = Constants.repositoriesString
+        title = Strings.repositoriesString
 
         // [df] when this will work?
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
@@ -67,7 +75,7 @@ class ReposViewController: UIViewController {
     private func setupTableView() {
         tableView.backgroundColor = Colors.backGround
         // [df] all constansts should be stored in class private enums
-        tableView.pin(to: view, with: 5)
+        tableView.pin(to: view, with: Sizes.padding)
 
         tableView.register(RepoCell.self, forCellReuseIdentifier: RepoCell.reuseID)
         tableView.dataSource = self

@@ -8,7 +8,7 @@
 import Foundation
 
 // [df] probably bad naming
-enum ReposError: String, Error {
+enum NetworkError: String, Error {
 
     case invalidKeyWord = "Invalid KeyWord"
     case unableToComplete = "Unable to complete the request"
