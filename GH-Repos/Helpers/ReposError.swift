@@ -7,6 +7,7 @@
 
 import Foundation
 
+// [df] probably bad naming
 enum ReposError: String, Error {
 
     case invalidKeyWord = "Invalid KeyWord"

@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - RepoModel
 struct RepoModel: Decodable {
+    // [df] what if all nil?
     var fullName: String?
     var description: String?
     var owner: Owner?

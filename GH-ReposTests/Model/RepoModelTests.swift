@@ -8,6 +8,7 @@
 import XCTest
 @testable import GH_Repos
 
+// [df] what is point of testing model objects?
 class RepoModelTests: XCTestCase {
 
     // MARK: - Init
@@ -16,7 +17,7 @@ class RepoModelTests: XCTestCase {
         let sut = RepoModel(fullName: "Foo", description: "Bar")
 
         XCTAssert(sut.fullName == "Foo", "fullName schould be Foo")
-        XCTAssert(sut.description == "Bar", "fullName schould be Bar")
+        XCTAssert(sut.description == "Bar", "description schould be Bar")
         XCTAssert(sut.owner?.avatarUrl == nil, "avatarUrl should be nil")
     }
 
@@ -25,7 +26,7 @@ class RepoModelTests: XCTestCase {
         let sut = RepoModel()
 
         XCTAssertNil(sut.fullName, "fullName schould be nil")
-        XCTAssertNil(sut.description, "fullName schould be nil")
+        XCTAssertNil(sut.description, "description schould be nil")
         XCTAssertNil(sut.owner?.avatarUrl, "avatarUrl should be nil")
     }
 

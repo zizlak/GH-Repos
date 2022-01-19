@@ -7,6 +7,7 @@
 
 import Foundation
 
+// [df] abstraction seems redundant
 struct URLModel {
 
     // MARK: - Properties

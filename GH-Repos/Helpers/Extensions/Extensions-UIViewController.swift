@@ -10,6 +10,7 @@ import UIKit
 extension UIViewController {
 
     func popUp(message: String) {
+        // [df] where to store strings?
         let allertController = UIAlertController(title: "Something went wrong",
                                                  message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .cancel)

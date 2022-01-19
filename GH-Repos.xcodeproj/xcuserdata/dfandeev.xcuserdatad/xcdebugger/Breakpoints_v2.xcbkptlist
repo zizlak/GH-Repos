@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2D3DF099-082E-4995-9969-361E8E76B4CC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "632DC0E7-1529-4028-B982-95C1F433C792"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GH-ReposTests/Networking/NetworkingTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "testNetworkServiceRequestDataNotNil()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "632DC0E7-1529-4028-B982-95C1F433C792 - aa38bddeebef2d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, GH_ReposTests.ReposError&gt;) -&gt; () in GH_ReposTests.NetworkingTest.testNetworkServiceRequestDataNotNil() -&gt; ()"
+                  moduleName = "GH-ReposTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dfandeev/Documents/GH-Repos/GH-ReposTests/Networking/NetworkingTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "632DC0E7-1529-4028-B982-95C1F433C792 - aa38bddeebef2f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, GH_ReposTests.ReposError&gt;) -&gt; () in GH_ReposTests.NetworkingTest.testNetworkServiceRequestDataNotNil() -&gt; ()"
+                  moduleName = "GH-ReposTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dfandeev/Documents/GH-Repos/GH-ReposTests/Networking/NetworkingTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "261">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

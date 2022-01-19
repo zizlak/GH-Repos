@@ -28,10 +28,12 @@ class ReposViewController: UIViewController {
 
     // MARK: - Methods
     private func setupReposListViewModel() {
+        // [df] what are benefits and drawbacks of `unowned`?
         reposListViewModel = ReposListViewModel { [unowned self] in
             self.tableView.reloadData()
             self.tableView.scrollToTheTop()
         }
+        // [df] prepare to comment on this solution
         reposListViewModel?.errorString.bind(listener: { [unowned self] in
             guard let error = $0 else { return }
             self.popUp(message: error)
@@ -43,6 +45,7 @@ class ReposViewController: UIViewController {
         view.backgroundColor = Colors.backGround
         title = Constants.repositoriesString
 
+        // [df] when this will work?
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
         view.addGestureRecognizer(tapGesture)
     }
@@ -63,6 +66,7 @@ class ReposViewController: UIViewController {
 
     private func setupTableView() {
         tableView.backgroundColor = Colors.backGround
+        // [df] all constansts should be stored in class private enums
         tableView.pin(to: view, with: 5)
 
         tableView.register(RepoCell.self, forCellReuseIdentifier: RepoCell.reuseID)

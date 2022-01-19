@@ -7,6 +7,7 @@
 
 import Foundation
 
+// [df] how about protocol for this class?
 class ObjectsFetcherManager {
 
     // MARK: - Dependency
@@ -19,6 +20,7 @@ class ObjectsFetcherManager {
 
     // MARK: - fetchRepos
     func fetchRepos(completion: @escaping(Result<[RepoModel], ReposError>) -> Void) {
+        // [df] should use constants
         let urlModel = URLModel(scheme: "https",
                                 host: "api.github.com",
                                 path: ["repositories"])
@@ -29,6 +31,7 @@ class ObjectsFetcherManager {
 
     // MARK: - Repos by keyword
     func fetchReposContaining(_ keyword: String, completion: @escaping(Result<FilteredRepos, ReposError>) -> Void) {
+        // [df] seems like both methods look quite similar
         let urlModel = URLModel(scheme: "https",
                                 host: "api.github.com",
                                 path: ["search", "repositories"],

@@ -9,9 +9,12 @@ import Foundation
 
 // MARK: - Protocol
 protocol ObjectsFetcherProtocol {
+    // [df] same as `NetworkRequestServiceProtocol`
     func fetchGenericJSONData<T: Decodable>(url: URL, completion: @escaping(Result<T, ReposError>) -> Void)
 }
 
+// [df] idea for a test: how to check that `NetworkObjectsFetcher` properly uses `networkService`?
+// [df] tests all other
 class NetworkObjectsFetcher: ObjectsFetcherProtocol {
 
     // MARK: - Dependency

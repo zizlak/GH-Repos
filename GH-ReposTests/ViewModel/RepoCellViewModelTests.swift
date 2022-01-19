@@ -8,6 +8,7 @@
 import XCTest
 @testable import GH_Repos
 
+// [df] what is point of testing view-models?
 class RepoCellViewModelTests: XCTestCase {
 
     // MARK: - Name

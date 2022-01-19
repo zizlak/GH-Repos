@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - Protocol
 protocol ReposListViewModelProtocol {
+    // [df] init in protocol
     init(listener: (() -> Void)?)
 
     func numberOfItems() -> Int
@@ -21,6 +22,7 @@ protocol ReposListViewModelProtocol {
     var errorString: Box<String?> { get }
 }
 
+// [df] how to check that `ReposListViewModel` uses `ObjectsFetcherManager` properly in tests
 class ReposListViewModel: ReposListViewModelProtocol {
 
     // MARK: - Properties
@@ -41,6 +43,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
 
     // MARK: - Methods
     func fetchAllRepos() {
+        // [df] ObjectsFetcherManager should be a dependency
         ObjectsFetcherManager().fetchRepos { [weak self] result in
             guard let self = self else { return }
 
@@ -49,6 +52,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
                 self.repos = repos
 
             case .failure(let error):
+                // [df] no box
                 self.errorString.value = error.rawValue
             }
         }
@@ -61,6 +65,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
             return
         }
 
+        // [df] code looks quite similar to `fetchAllRepos`
         ObjectsFetcherManager().fetchReposContaining(keyword) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -69,6 +74,7 @@ class ReposListViewModel: ReposListViewModelProtocol {
                 self.repos = items
 
             case .failure(let error):
+                // [df] box
                 self.errorString = Box(error.rawValue)
             }
         }
